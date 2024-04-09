@@ -175,7 +175,7 @@
       <li>conan: the C++ Package Manager</li>
     </ul>
 
-    <h3>How to install Python</h3>
+    <h3>How to install Python &amp; modules</h3>
     <div class="container">
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#python-windows">Windows</a></li>
@@ -188,6 +188,7 @@
           <pre>
               <code class="language-powershell">
                 winget install --id Python.Python.3.12 --source winget
+                pip install pipenv
               </code>
             </pre>
         </div>
@@ -195,16 +196,31 @@
           <pre>
               <code class="language-bash">
                 brew install python
+                pip install pipenv
               </code>
             </pre>
         </div>
         <div id="python-linux" class="tab-pane fade">
-          <p>
-            Python is already installed no action required
-          </p>
+          <pre>
+            <code class="language-bash">
+              sudo apt install pipenv
+              pip install pipenv
+            </code>
+          </pre>
         </div>
       </div>
     </div>
+
+    <h2>Installing conan</h2>
+    <pre>
+      <code class="language-bash">
+        mkdir conan 
+        cd conan
+        pipenv install conan
+        pipenv run conan detect
+        pipenv run conan --version
+      </code>
+    </pre>
 
     <h2>IDE</h2>
     <p>
