@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Setting the development environment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="styles/prism.css">
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1>Setting the development environment</h1>
+    <p>
+      Learning C++ made easy
+    </p>
+  </div>
+
+  <div class="container">
+    <h2>Objectives</h2>
+    <p>
+      Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, MacOS and Linux.
+    <ul>
+      <li>How to install the C++ compiler on Windows, MacOS and Linux.</li>
+      <li>How to install Python and all the required Python modules.</li>
+      <li>How to install Conan, the C++ package manager.</li>
+      <li>How to install Visual Studio Code.</li>
+      <li>How to run our first application.</li>
+    </ul>
+    </p>
+
+    <h2>Introduction</h2>
+    <p>
+      There are several factors to consider when setting up the environment:
+    </p>
+
+    <ol>
+      <li>It should be self-contained and reproducible</li>
+      <li>It should be tool-friendly</li>
+    </ol>
+
+    <p>
+      A self-contained working environment makes collaboration with other people much more straightforward and makes
+      setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
+      honestly think this is overkill. A working environment should require the bare minimum dependencies from the
+      system and nothing more.
+    </p>
+
+    <p>
+      The environment should be able to build our project and simply the development process. Tools like auto
+      competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for our
+      workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
+      Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
+    </p>
+
+    <h2>Terminal</h2>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#terminal-windows">Windows</a></li>
+        <li><a data-toggle="tab" href="#terminal-macos">MacOS</a></li>
+        <li><a data-toggle="tab" href="#terminal-linux">Linux</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="terminal-windows" class="tab-pane fade in active">
+          <p>
+            I highly recommend installing winget on Windows as it will simplify download packages.
+          </p>
+          <p>
+            The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
+          </p>
+          <pre>
+              <code class="language-powershell">
+                winget install --id Microsoft.WindowsTerminal --source winget
+              </code>
+            </pre>
+        </div>
+        <div id="terminal-macos" class="tab-pane fade">
+          <p>
+            On MacOS, I suggest to install iTerm2.
+          </p>
+          <p>
+            I suggest to install also Homebrew as a package manager.
+          </p>
+        </div>
+        <div id="terminal-linux" class="tab-pane fade">
+          <p>
+            Nothing to do on Linux :) .
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2>C++ Toolchain</h2>
+    <p>
+      The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in the
+      target machine.
+    </p>
+
+    <p>
+      There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular. These
+      compilers are very different from each other, and learning singularly all of them takes a lot of time and effort.
+      To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
+    </p>
+
+    <p>
+      A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
+      for formatting the code, static analysis, and compilers.
+    </p>
+
+    <h3>How to install the C++ toolchain</h3>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#cpp-toolchain-windows">Windows</a></li>
+        <li><a data-toggle="tab" href="#cpp-toolchain-macos">MacOS</a></li>
+        <li><a data-toggle="tab" href="#cpp-toolchain-linux">Linux</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="cpp-toolchain-windows" class="tab-pane fade in active">
+          <p>
+            On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
+            download Visual Studio Community for free.
+          </p>
+          <p>
+            There are two options to install it: via winget or downloading it from the browser. Using winget from the
+            Windows Terminal:
+          </p>
+          <pre>
+              <code class="language-powershell">
+                winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget
+              </code>
+            </pre>
+        </div>
+        <div id="cpp-toolchain-macos" class="tab-pane fade">
+          <p>
+            Installing the C++ Compiler on MacOS is straightforward. Open the terminal and type:
+          </p>
+          <pre>
+              <code class="language-bash">
+                xcode-select --install
+              </code>
+            </pre>
+        </div>
+        <div id="cpp-toolchain-linux" class="tab-pane fade">
+          <p>
+            On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
+            messages than GCC, and it's easier for beginners to understand the issues.
+          </p>
+          <p>
+            Type the following command from the terminal:
+          </p>
+          <pre>
+              <code class="language-bash">
+                sudo apt install clang
+              </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <h2>Python</h2>
+    <p>
+      Python is a programming language like C++, and Conan C++ Package Manager is a Python module. For this reason,
+      Python should be installed in our system with these modules:
+    </p>
+
+    <ul>
+      <li>pip: for installing Python packages</li>
+      <li>pipenv: for using self-contained Python environment</li>
+      <li>conan: the C++ Package Manager</li>
+    </ul>
+
+    <h3>How to install Python</h3>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#python-windows">Windows</a></li>
+        <li><a data-toggle="tab" href="#python-macos">MacOS</a></li>
+        <li><a data-toggle="tab" href="#python-linux">Linux</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="python-windows" class="tab-pane fade in active">
+          <pre>
+              <code class="language-powershell">
+                winget install --id Python.Python.3.12 --source winget
+              </code>
+            </pre>
+        </div>
+        <div id="python-macos" class="tab-pane fade">
+          <pre>
+              <code class="language-bash">
+                brew install python
+              </code>
+            </pre>
+        </div>
+        <div id="python-linux" class="tab-pane fade">
+          <p>
+            Python is already installed no action required
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2>IDE</h2>
+    <p>
+      The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
+      contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
+      Many available IDEs exist, but Visual Studio Code has become one of the most widespread. It's free and works on
+      all the major platforms.
+    </p>
+
+    <h3>How to install Visual Studio Code</h3>
+
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#vscode-windows">Windows</a></li>
+        <li><a data-toggle="tab" href="#vscode-macos">MacOS</a></li>
+        <li><a data-toggle="tab" href="#vscode-linux">Linux</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="vscode-windows" class="tab-pane fade in active">
+          <pre>
+              <code class="language-powershell">
+                winget install --id Microsoft.VisualStudioCode.CLI --source Winget
+              </code>
+            </pre>
+        </div>
+        <div id="vscode-macos" class="tab-pane fade">
+          <pre>
+              <code class="language-bash">
+                brew install visual-studio-code
+              </code>
+            </pre>
+        </div>
+        <div id="vscode-linux" class="tab-pane fade">
+          <pre>
+              <code class="language-bash">
+                sudo snap install --classic code
+              </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <h3>Setting up Visual Studio Code</h3>
+    <p>
+      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press Alt+⇧+P or
+      (⌘+⇧+P) and type “Shell Command: install 'code' command in PATH“
+    </p>
+
+    <img src="images/01_ide_code_on_path.webp">
+
+    <p>
+      The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or ⌘+⇧+P and
+      the extension's name. The following extensions are required:
+    </p>
+
+    <ul>
+      <li>C/C++</li>
+      <li>C/C++ Extension Pack</li>
+      <li>C/C++ Themes (Optional)</li>
+      <li>CMake</li>
+      <li>CMake Tools</li>
+    </ul>
+
+    <p>
+      Below a screenshot with all the required extensions:
+    </p>
+
+    <img src="images/01_ide_code_extensions.webp">
+
+    <p>
+      More information about how to set up a C++ environment can be found here.
+    </p>
+
+    <h2>Hello world</h2>
+
+    <pre><code class="language-bash">
+  mkdir hello_world
+  cd hello_world
+
+  conan new cppyoga-simple-exe -d name=simple-app -d version=1.0.0
+  pipenv run conan detect
+  pipenv run conan install .
+  pipenv run conan build .
+      </code></pre>
+
+    <h3>Activate the Conan build environment</h3>
+    <pre><code class="language-shell">
+        pipenv shell
+      </code></pre>
+
+    <pre>
+        <code class="language-cpp">
+  import std;
+  using namespace std;
+
+  int main() {
+    println("Hello Woorld!")
+  }
+      </code>
+    </pre>
+
+  </div>
+
+  <script src="js/prism.js"></script>
+</body>
+
+</html>
