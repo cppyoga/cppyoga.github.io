@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Setting the development environment</title>
+
+  <meta name="author" content="Elvis Dukaj" />
+  <meta name="description" content="Setting up correctly the development environment is a crucial factor for a succesfull software developer.
+    We will learn how to create an easy but still professional environment" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../styles/prism.css" />
+
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1>Setting the development environment</h1>
+    <p>
+      Learning C++ made easy
+    </p>
+  </div>
+
+  <div class="container">
+    <h2>Objectives</h2>
+    <p>
+      Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, MacOS and Linux.
+    <ul>
+      <li>How to install the C++ compiler on Windows, MacOS and Linux.</li>
+      <li>How to install Python and all the required Python modules.</li>
+      <li>How to install Conan, the C++ package manager.</li>
+      <li>How to install Visual Studio Code.</li>
+      <li>How to run our first application.</li>
+    </ul>
+    </p>
+
+    <h2>Introduction</h2>
+    <p>
+      There are several factors to consider when setting up the environment:
+    </p>
+
+    <ol>
+      <li>It should be self-contained and reproducible</li>
+      <li>It should be tool-friendly</li>
+    </ol>
+
+    <p>
+      A self-contained working environment makes collaboration with other people much more straightforward and makes
+      setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
+      honestly think this is overkill. A working environment should require the bare minimum dependencies from the
+      system and nothing more.
+    </p>
+
+    <p>
+      The environment should be able to build our project and simply the development process. Tools like auto
+      competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for our
+      workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
+      Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
+    </p>
+
+    <h2>Terminal</h2>
+    <nav>
+      <div class="nav nav-tabs" id="nav-terminal-tab" role="tablist">
+        <button class="nav-link active" id="nav-terminal-window-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-terminal-windows-panel" type="button" role="tab" aria-controls="nav-terminal-windows"
+          aria-selected="true">Windows</button>
+        <button class="nav-link" id="nav-terminal-macos-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-terminal-macos-panel" type="button" role="tab" aria-controls="nav-terminal-macos"
+          aria-selected="true">MacOS</button>
+        <button class="nav-link" id="nav-terminal-linux-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-terminal-linux-panel" type="button" role="tab" aria-controls="nav-terminal-macos"
+          aria-selected="false">Linux</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-terminal-content">
+      <div class="tab-pane fade show active" id="nav-terminal-windows-panel" role="tabpanel"
+        aria-labelledby="nav-terminal-window-tab">
+        <p>
+          I highly recommend installing winget on Windows as it will simplify download packages.
+        </p>
+        <p>
+          The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
+        </p>
+        <pre><code class="language-powershell">winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-terminal-macos-panel" role="tabpanel"
+        aria-labelledby="nav-terminal-macos-tab">
+        <p>
+          On MacOS, I suggest to install iTerm2.
+        </p>
+        <p>
+          I suggest to install also Homebrew as a package manager.
+        </p>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-terminal-linux-panel" role="tabpanel"
+        aria-labelledby="nav-terminal-linux-tab">
+        <p>
+          Nothing to do on Linux :) .
+        </p>
+      </div>
+    </div>
+
+    <h2>C++ Toolchain</h2>
+    <p>
+      The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in the
+      target machine.
+    </p>
+
+    <p>
+      There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular. These
+      compilers are very different from each other, and learning singularly all of them takes a lot of time and effort.
+      To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
+    </p>
+
+    <p>
+      A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
+      for formatting the code, static analysis, and compilers.
+    </p>
+
+    <h3>How to install the C++ toolchain</h3>
+    <nav>
+      <div class="nav nav-tabs" id="nav-toolchain-tab" role="tablist">
+        <button class="nav-link active" id="nav-toolchain-window-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-toolchain-windows-panel" type="button" role="tab" aria-controls="nav-toolchain-windows"
+          aria-selected="true">Windows</button>
+        <button class="nav-link" id="nav-toolchain-macos-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-toolchain-macos-panel" type="button" role="tab" aria-controls="nav-toolchain-macos"
+          aria-selected="true">MacOS</button>
+        <button class="nav-link" id="nav-toolchain-linux-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-toolchain-linux-panel" type="button" role="tab" aria-controls="nav-toolchain-linux"
+          aria-selected="false">Linux</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-toolchain-content">
+      <div class="tab-pane fade show active" id="nav-toolchain-windows-panel" role="tabpanel"
+        aria-labelledby="nav-toolchain-window-tab">
+        <p>
+          On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
+          download Visual Studio Community for free.
+        </p>
+        <p>
+          There are two options to install it: via winget or downloading it from the browser. Using winget from the
+          Windows Terminal:
+        </p>
+        <pre><code class="language-powershell">winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code>
+        </pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-toolchain-macos-panel" role="tabpanel"
+        aria-labelledby="nav-toolchain-macos-tab">
+        <p>
+          Installing the C++ Compiler on MacOS is straightforward. Open the terminal and type:
+        </p>
+        <pre><code class="language-bash">xcode-select --install</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-toolchain-linux-panel" role="tabpanel"
+        aria-labelledby="nav-toolchain-linux-tab">
+        <p>
+          On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
+          messages than GCC, and it's easier for beginners to understand the issues.
+        </p>
+        <p>
+          Type the following command from the terminal:
+        </p>
+        <pre><code class="language-bash">sudo apt install clang</code></pre>
+      </div>
+    </div>
+
+    <h2>Install Git</h2>
+    <p>
+      Git is a software control version. No knowledge of git will be required during this course.
+    </p>
+    <nav>
+      <div class="nav nav-tabs" id="nav-git-tab" role="tablist">
+        <button class="nav-link active" id="nav-git-window-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-git-windows-panel" type="button" role="tab" aria-controls="nav-git-windows"
+          aria-selected="true">Windows</button>
+        <button class="nav-link" id="nav-git-macos-tab" data-bs-toggle="tab" data-bs-target="#nav-git-macos-panel"
+          type="button" role="tab" aria-controls="nav-git-macos" aria-selected="true">MacOS</button>
+        <button class="nav-link" id="nav-git-linux-tab" data-bs-toggle="tab" data-bs-target="#nav-git-linux-panel"
+          type="button" role="tab" aria-controls="nav-git-linux" aria-selected="false">Linux</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-git-content">
+      <div class="tab-pane fade show active" id="nav-git-windows-panel" role="tabpanel"
+        aria-labelledby="nav-git-window-tab">
+        <pre><code class="language-powershell">winget install --id Git.Git --source winget</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-toolchain-macos-panel" role="tabpanel"
+        aria-labelledby="nav-toolchain-macos-tab">
+        <pre><code class="language-bash">brew install git</code>
+        </pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-toolchain-linux-panel" role="tabpanel"
+        aria-labelledby="nav-toolchain-linux-tab">
+        <pre><code class="language-bash">sudo apt install git</code></pre>
+      </div>
+    </div>
+
+    <h2>Python</h2>
+    <p>
+      Python is a programming language like C++, and Conan C++ Package Manager is a Python module. For this reason,
+      Python should be installed in our system with these modules:
+    </p>
+
+    <ul>
+      <li>pip: for installing Python packages</li>
+      <li>pipenv: for using self-contained Python environment</li>
+      <li>conan: the C++ Package Manager</li>
+    </ul>
+
+    <h3>How to install Python</h3>
+    <nav>
+      <div class="nav nav-tabs" id="nav-install-python-tab" role="tablist">
+        <button class="nav-link active" id="nav-install-python-window-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-python-windows-panel" type="button" role="tab"
+          aria-controls="nav-install-python-windows" aria-selected="true">Windows</button>
+        <button class="nav-link" id="nav-install-python-macos-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-python-macos-panel" type="button" role="tab"
+          aria-controls="nav-install-python-macos" aria-selected="true">MacOS</button>
+        <button class="nav-link" id="nav-install-python-linux-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-python-linux-panel" type="button" role="tab"
+          aria-controls="nav-install-python-linux" aria-selected="false">Linux</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-install-python-content">
+      <div class="tab-pane fade show active" id="nav-install-python-windows-panel" role="tabpanel"
+        aria-labelledby="nav-install-python-window-tab">
+        <pre><code class="language-powershell">winget install --id Python.Python.3.12 --source winget
+python -m ensurepip --upgrade
+pip install pipenv</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-install-python-macos-panel" role="tabpanel"
+        aria-labelledby="nav-install-python-macos-tab">
+        <pre><code class="language-bash">brew install python
+pip install pipenv</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-install-python-linux-panel" role="tabpanel"
+        aria-labelledby="nav-install-python-linux-tab">
+        <pre><code class="language-bash">sudo apt install pipenv
+pip install pipenv</code></pre>
+      </div>
+    </div>
+
+    <h3>How to install Pip &amp; Pipenv</h3>
+    Pip and Pipenv are two python package manager modules. They will help us in downloading the required dependencies.
+    <pre><code class="language-powershell">winget install --id Python.Python.3.12 --source winget
+python -m ensurepip --upgrade
+pip install pipenv</code></pre>
+
+    <h2>Conan</h2>
+    <p>
+      Conan is a C++ package manager. A quick tutorial can be found in <a
+        href="https://docs.conan.io/2/tutorial.html">conan.io</a> website.
+    </p>
+
+    <p>
+      For this tutorial I create some profiles and templates to easily use conan and create new projects from scratch.
+      To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
+    </p>
+
+    <pre><code class="language-bash">pipenv install conan
+pipenv run conan config install https://github.com/elvisdukaj/cppyoga_conan_config.git</code></pre>
+
+    <p>
+      The first command installs conan in a self-contained virtual environment. That means that conan won't be visible
+      globally in your system. There are two ways to run conan.
+
+    <ol>
+      <li>
+        <p>
+          pipenv run allows to run a command inside the python virtual environment without explictly activate is:
+        </p>
+        <pre><code class="language-bash">pipenv run &lt; conan commands &gt;</code></pre>
+      </li>
+      <li>
+        Activate the virtual environment in the current shell by calling:
+        <pre><code class="language-bash">pipenv shell</code></pre>
+        <p>
+          After the environment is activated conan, and all the python modules, will be available in the current
+          session.
+        </p>
+      </li>
+    </ol>
+    </p>
+
+    <h2>IDE</h2>
+    <p>
+      The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
+      contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
+      Many available IDEs exist, but Visual Studio Code has become one of the most widespread. It's free and works on
+      all the major platforms.
+    </p>
+
+    <h3>How to install Visual Studio Code</h3>
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
+        <button class="nav-link active" id="nav-install-ide-window-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-ide-windows-panel" type="button" role="tab"
+          aria-controls="nav-install-ide-windows" aria-selected="true">Windows</button>
+        <button class="nav-link" id="nav-install-pytidehon-macos-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-ide-macos-panel" type="button" role="tab" aria-controls="nav-install-ide-macos"
+          aria-selected="true">MacOS</button>
+        <button class="nav-link" id="nav-install-ide-linux-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-install-ide-linux-panel" type="button" role="tab" aria-controls="nav-install-ide-linux"
+          aria-selected="false">Linux</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-install-ide-content">
+      <div class="tab-pane fade show active" id="nav-install-ide-windows-panel" role="tabpanel"
+        aria-labelledby="nav-install-ide-window-tab">
+        <pre><code class="language-powershell">winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-install-ide-macos-panel" role="tabpanel"
+        aria-labelledby="nav-install-ide-macos-tab">
+        <pre><code class="language-bash">brew install visual-studio-code</code></pre>
+      </div>
+
+      <div class="tab-pane fade show" id="nav-install-ide-linux-panel" role="tabpanel"
+        aria-labelledby="nav-install-ide-linux-tab">
+        <pre><code class="language-bash">sudo snap install --classic code</code></pre>
+      </div>
+    </div>
+
+    <h3>Setting up Visual Studio Code</h3>
+    <p>
+      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press Alt+⇧+P or
+      (⌘+⇧+P) and type “Shell Command: install 'code' command in PATH“
+    </p>
+
+    <img src="../images/01_ide_code_on_path.webp" />
+
+    <p>
+      The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or ⌘+⇧+P and
+      the extension's name. The following extensions are required:
+    </p>
+
+    <ul>
+      <li>C/C++</li>
+      <li>C/C++ Extension Pack</li>
+      <li>C/C++ Themes (Optional)</li>
+      <li>CMake</li>
+      <li>CMake Tools</li>
+    </ul>
+
+    <p>
+      Below a screenshot with all the required extensions:
+    </p>
+
+    <img src="../images/01_ide_code_extensions.webp" />
+
+    <p>
+      More information about how to set up a C++ environment can be found here.
+    </p>
+
+    <p>
+      When using conan the best way to start conan is from the pipenv environment variable.
+    </p>
+    <pre><code class="language-bash">pipenv run code .</code></pre>
+
+    <h2>Let's build our first program</h2>
+    <p>
+      Now that we have finally set up the environment we are able to build a complex program. The goal is to be build
+      and run an application and not
+      to understand what is the code doing.
+    </p>
+
+    <p>
+      The following steps are required:
+
+    <ol>
+      <li>
+        Clone the git project.
+      </li>
+      <li>
+        Install the build and the release conan profiles.
+      </li>
+      <li>
+        Start the IDE from the environment.
+      </li>
+      <li>
+        Build and run the code from Visual Studio.
+      </li>
+      <li>
+        Build and run the code from the terminal.
+      </li>
+    </ol>
+    </p>
+
+    <p>
+      <strong>
+        If you're using Visual C++, use the Powersehll with the Visual Studio environment enabled.
+      </strong>
+    </p>
+
+    <pre><code class="language-bash">echo "(1) Clone the project"
+git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
+cd cppyoga-image2ascii
+echo "(2) Install the debug and release profiles. This will build and install all the third party dependencies"
+pipenv run build_msvc
+echo "(3) Lunch the IDE"
+pipenv run lunch_vscode</code></pre>
+
+    <p>
+      Let's review line by line what is happening.
+    <ol>
+      <li>
+        <code>git clone</code> downloads the project from github to the cppyoga-image2ascii
+      </li>
+      <li>
+        <p>
+          <code>pipenv run build_msvc</code> downloads and install all the third party dependencies needed to buld our
+          projects.
+          This command can take long the first time. After downloading and installing the dependencies,
+          <code>conan</code> will
+          cache the binaries and it won't build them anymore. So the following calls will be much faster.
+        </p>
+        <p>
+          In the Pipenv file is possible to define some convinent scripts. The above command is expanded like the
+          following:
+        <pre><code class="language-bash">conan install . --profile:build cppyoga/msvc --settings build_type=Debug --profile:build cppyoga/msvc_build --build missing
+conan install . --profile:build cppyoga/msvc --settings build_type=Release --profile cppyoga/msvc_build --build missing</code></pre>
+        </p>
+        <p>
+          <code>conan install .</code> is used to download and build if necessary the required dependencies/
+        </p>
+        <p>
+          <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimazing the code, making it easier to debug but also slower.
+          A Release build is the optimized version of the program, but it's harder to debug.
+        </p>
+        <p>
+          <code>--profile PROFILE</code> indicates conan what profile use for building the package. A profile is a set of settings specifying how the executables
+          and the libraries will be build, this information includes the operating system, the used compiler
+        </p>
+      </li>
+    </ol>
+    </p>
+
+    <!-- <h2>Hello world</h2>
+
+    <pre><code class="language-bash">
+  mkdir hello_world
+  cd hello_world
+
+  conan new cppyoga-simple-exe -d name=simple-app -d version=1.0.0
+  pipenv run conan detect
+  pipenv run conan install .
+  pipenv run conan build .
+      </code></pre>
+
+    <h3>Activate the Conan build environment</h3>
+    <pre><code class="language-shell">
+        pipenv shell
+      </code></pre>
+
+    <pre>
+        <code class="language-cpp">
+  import std;
+  using namespace std;
+
+  int main() {
+    println("Hello Woorld!")
+  }
+      </code>
+    </pre> -->
+
+  </div>
+
+  <script src="../js/prism.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
