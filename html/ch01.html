@@ -227,7 +227,7 @@
       blog post.
     </p>
 
-    <img class="img-fluid" alt="preview" src="../images/01_asciidoc_transformation.png">
+    <img alt="preview" class="img-fluid" src="../images/01_asciidoc_transformation.png">
 
     <h2 class="text-body-emphasis">Introduction</h2>
     <p>
@@ -280,8 +280,7 @@
         <p>
           The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
         </p>
-        <pre><code
-            class="language-powershell">winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
+        <pre class="pre-scrollable"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
       </div>
 
       <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
@@ -348,8 +347,7 @@
           There are two options to install it: via winget or downloading it from the browser. Using winget from the
           Windows Terminal:
         </p>
-        <pre><code class="language-powershell">winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code>
-        </pre>
+        <pre class="pre-scrollable"><code>winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code></pre>
       </div>
 
       <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
@@ -357,7 +355,7 @@
         <p>
           Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
         </p>
-        <pre><code class="language-bash">xcode-select --install</code></pre>
+        <pre class="pre-scrollable"><code>xcode-select --install</code></pre>
       </div>
       <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
            role="tabpanel">
@@ -368,7 +366,7 @@
         <p>
           Type the following command from the terminal:
         </p>
-        <pre><code class="language-bash">sudo apt install clang</code></pre>
+        <pre class="pre-scrollable"><code>sudo apt install clang</code></pre>
       </div>
     </div>
 
@@ -395,17 +393,17 @@
     <div class="tab-content" id="nav-git-content">
       <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
            role="tabpanel">
-        <pre><code class="language-powershell">winget install --id Git.Git --source winget</code></pre>
+        <pre class="pre-scrollable"><code>winget install --id Git.Git --source winget</code></pre>
       </div>
 
       <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel"
            role="tabpanel">
-        <pre><code class="language-bash">brew install git</code></pre>
+        <pre class="pre-scrollable"><code>brew install git</code></pre>
       </div>
 
       <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel"
            role="tabpanel">
-        <pre><code class="language-bash">sudo apt install git</code></pre>
+        <pre class="pre-scrollable"><code>sudo apt install git</code></pre>
       </div>
     </div>
 
@@ -436,30 +434,37 @@
       <div class="tab-content" id="nav-conan-content">
         <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
              role="tabpanel">
-          <pre><code class="language-powershell">winget install --id JFrog.Conan --source winget</code></pre>
+          <pre class="pre-scrollable"><code>winget install --id JFrog.Conan --source winget</code></pre>
         </div>
 
         <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
              role="tabpanel">
-          <pre><code class="language-bash">brew install conan</code></pre>
+          <pre class="pre-scrollable"><code>brew install conan</code></pre>
         </div>
 
         <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
              role="tabpanel">
-          <pre><code class="language-bash">sudo apt install conan</code></pre>
+          <pre class="pre-scrollable"><code>sudo apt install conan</code></pre>
         </div>
       </div>
+
+      <p>After installing conan we can create a default profile</p>
+      <pre><code>conan profile detect</code></pre>
+
+      <p>
+        It's also possible, and recommender, to install conan via a Python
+        virtual environment, for instance using <code>pipenv</code>. This requires
+        to install Python and <code>pipenv</code> but it also allows to have a full
+        self-contained environment.
+      </p>
 
       <p>
         For this tutorial I create some profiles and templates to easily use conan and create new projects from scratch.
         To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
       </p>
 
+      <pre><code>conan config install --type git https://github.com/elvisdukaj/cppyoga_conan_config.git</code></pre>
 
-      <p>
-        The first command installs conan in a self-contained virtual environment. That means that conan won't be visible
-        globally in your system. There are two ways to run conan.
-      </p>
     </div>
 
     <h2 class="text-body-emphasis">IDE</h2>
@@ -471,7 +476,6 @@
     </p>
 
     <h3>How to install Visual Studio Code</h3>
-
     <nav>
       <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
         <button aria-controls="nav-install-ide-windows" aria-selected="true" class="nav-link active"
@@ -494,28 +498,30 @@
       <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
            id="nav-install-ide-windows-panel"
            role="tabpanel">
-      <pre><code
-          class="language-powershell">winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+        <pre
+            class="pre-scrollable"><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
       </div>
 
       <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
            role="tabpanel">
-        <pre><code class="language-bash">brew install visual-studio-code</code></pre>
+        <pre class="pre-scrollable"><code>brew install visual-studio-code</code></pre>
       </div>
 
       <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
            role="tabpanel">
-        <pre><code class="language-bash">sudo snap install --classic code</code></pre>
+        <pre class="pre-scrollable"><code>sudo snap install --classic code</code></pre>
       </div>
     </div>
 
     <h3>Setting up Visual Studio Code</h3>
     <p>
-      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press Alt+⇧+P or
-      (⌘+⇧+P) and type “Shell Command: install 'code' command in PATH“
+      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press <kbd><kbd>Alt</kbd>
+      + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>
+      or
+      (<kbd><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>) and type “Shell Command: install 'code' command in PATH“
     </p>
 
-    <img class="img-fluid" alt="Visual Studio setting" src="../images/01_ide_code_on_path.webp"/>
+    <img alt="Visual Studio setting" class="img-fluid" src="../images/01_ide_code_on_path.webp"/>
 
     <p>
       The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or ⌘+⇧+P and
@@ -534,16 +540,11 @@
       Below a screenshot with all the required extensions:
     </p>
 
-    <img class="img-fluid" alt="Visual Studio Code extension" src="../images/01_ide_code_extensions.webp"/>
+    <img alt="Visual Studio Code extension" class="img-fluid" src="../images/01_ide_code_extensions.webp"/>
 
     <p>
       More information about how to set up a C++ environment can be found here.
     </p>
-
-    <p>
-      When using conan the best way to start conan is from the pipenv environment variable.
-    </p>
-    <pre><code class="language-bash">pipenv run code .</code></pre>
 
     <h2 class="text-body-emphasis">Let's build our first program</h2>
     <p>
@@ -578,12 +579,12 @@
       </strong>
     </p>
 
-    <pre><code class="language-bash">echo "(1) Clone the project"
+    <pre class="pre-scrollable"><code>echo "(1) Clone the project"
 git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
 cd cppyoga-image2ascii
 echo "(2) Install the debug and release profiles. This will build and install all the third party dependencies"
-conan install . --profile cppyoga/default --settings build_type=Debug
-conan install . --profile cppyoga/default --settings build_type=Release
+conan build . --profile cppyoga/default --settings build_type=Debug --build missing
+conan build . --profile cppyoga/default --settings build_type=Release --build missing
 echo "(3) Lunch the IDE"
 code .</code></pre>
 
@@ -595,19 +596,11 @@ code .</code></pre>
       </li>
       <li>
         <p>
-          <code>pipenv run build_msvc</code> downloads and install all the third party dependencies needed to build our
+          <code>conan install</code> downloads and install all the third party dependencies needed to build our
           projects.
           This command can take long the first time. After downloading and installing the dependencies,
           <code>conan</code> will
           cache the binaries, and it won't build them anymore. So the following calls will be much faster.
-        </p>
-        <p>
-          In the Pipenv file is possible to define some convenient scripts. The above command is expanded like the
-          following:
-        <pre><code class="language-bash">conan install . --profile:build cppyoga/msvc --settings build_type=Debug --profile:build cppyoga/msvc_build --build missing
-conan install . --profile:build cppyoga/msvc --settings build_type=Release --profile cppyoga/msvc_build --build missing</code></pre>
-        <p>
-          <code>conan install .</code> is used to download and build if necessary the required dependencies/
         </p>
         <p>
           <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the code,
