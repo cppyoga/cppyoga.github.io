@@ -596,12 +596,14 @@ code .</code></pre>
       </li>
       <li>
         <p>
-          <code>conan install</code> downloads and install all the third party dependencies needed to build our
-          projects.
-          This command can take long the first time. After downloading and installing the dependencies,
+          <code>conan build ... --build missing</code> downloads and install all the third party dependencies needed to build our
+          projects. This command can take long the first time. After downloading and installing the dependencies,
           <code>conan</code> will
           cache the binaries, and it won't build them anymore. So the following calls will be much faster.
+          After the dependencies are downloaded and build if necessary thanks
+          to <code>--build missing</code> option. The project is finally compiled.
         </p>
+
         <p>
           <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the code,
           making it easier to debug but also slower.
