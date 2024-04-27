@@ -27,7 +27,7 @@
   </p>
 </div>
 
-<div class="container">
+<div class="container-md">
   <h2>Objectives</h2>
   <p>
     Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and Linux.
@@ -223,8 +223,7 @@
 
     <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel"
          role="tabpanel">
-        <pre><code class="language-bash">brew install git</code>
-        </pre>
+        <pre><code class="language-bash">brew install git</code></pre>
     </div>
 
     <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel"
@@ -261,8 +260,7 @@
 
     <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
          role="tabpanel">
-        <pre><code class="language-bash">brew install conan</code>
-        </pre>
+        <pre><code class="language-bash">brew install conan</code></pre>
     </div>
 
     <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
@@ -403,9 +401,10 @@
 git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
 cd cppyoga-image2ascii
 echo "(2) Install the debug and release profiles. This will build and install all the third party dependencies"
-pipenv run build_msvc
+conan install . --profile cppyoga/default --settings build_type=Debug
+conan install . --profile cppyoga/default --settings build_type=Release
 echo "(3) Lunch the IDE"
-pipenv run lunch_vscode</code></pre>
+code .</code></pre>
 
   <p>
     Let's review line by line what is happening.
