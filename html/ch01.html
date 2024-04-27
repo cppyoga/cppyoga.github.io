@@ -5,7 +5,7 @@
   <title>Setting the development environment</title>
 
   <meta content="Elvis Dukaj" name="author"/>
-  <meta content="Setting up correctly the development environment is a crucial factor for a succesfull software developer.
+  <meta content="Setting up correctly the development environment is a crucial factor for a successful software developer.
     We will learn how to create an easy but still professional environment" name="description"/>
 
   <meta charset="utf-8"/>
@@ -30,9 +30,9 @@
 <div class="container">
   <h2>Objectives</h2>
   <p>
-    Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, MacOS and Linux.
+    Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and Linux.
   <ul>
-    <li>How to install the C++ compiler on Windows, MacOS and Linux.</li>
+    <li>How to install the C++ compiler on Windows, macOS and Linux.</li>
     <li>How to install Python and all the required Python modules.</li>
     <li>How to install Conan, the C++ package manager.</li>
     <li>How to install Visual Studio Code.</li>
@@ -41,8 +41,8 @@
 
   <h2>What we will learn</h2>
   <p>
-    After this lecture we will be able to build a comple C++ program called image2ascii. Image2Ascii will download a
-    picture from an url and it will convert it in a coloured ascii art.
+    After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download a
+    picture from an url, and it will convert it in a coloured ascii art.
     We will be able to download and compile all the required dependencies, build and run the program and make small
     changes to it.
   </p>
@@ -112,7 +112,7 @@
     <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
          role="tabpanel">
       <p>
-        On MacOS, I suggest to install iTerm2.
+        On macOS, I suggest to install iTerm2.
       </p>
       <p>
         I suggest to install also Homebrew as a package manager.
@@ -180,7 +180,7 @@
     <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
          role="tabpanel">
       <p>
-        Installing the C++ Compiler on MacOS is straightforward. Open the terminal and type:
+        Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
       </p>
       <pre><code class="language-bash">xcode-select --install</code></pre>
     </div>
@@ -233,97 +233,55 @@
     </div>
   </div>
 
-  <h2>Python</h2>
+  <h2>Conan</h2>
   <p>
-    Python is a programming language like C++, and Conan C++ Package Manager is a Python module. For this reason,
-    Python should be installed in our system and be in the <code>PATH</code>.
+    Conan is a C++ package manager. A quick tutorial can be found in <a href="https://docs.conan.io/2/tutorial.html">conan.io</a>
+    website.
   </p>
 
-  <ul>
-    <li>pip: for installing Python packages</li>
-    <li>pipenv: for using self-contained Python environment</li>
-    <li>conan: the C++ Package Manager</li>
-  </ul>
-
-  <h3>How to install Python</h3>
   <nav>
-    <div class="nav nav-tabs" id="nav-install-python-tab" role="tablist">
-      <button aria-controls="nav-install-python-windows" aria-selected="true" class="nav-link active"
-              data-bs-target="#nav-install-python-windows-panel" data-bs-toggle="tab" id="nav-install-python-window-tab"
-              role="tab" type="button">Windows
+    <div class="nav nav-tabs" id="nav-conan-tab" role="tablist">
+      <button aria-controls="nav-conan-windows" aria-selected="true" class="nav-link active"
+              data-bs-target="#nav-conan-windows-panel" data-bs-toggle="tab" id="nav-conan-window-tab" role="tab"
+              type="button">Windows
       </button>
-      <button aria-controls="nav-install-python-macos" aria-selected="true" class="nav-link"
-              data-bs-target="#nav-install-python-macos-panel" data-bs-toggle="tab" id="nav-install-python-macos-tab"
-              role="tab" type="button">MacOS
+      <button aria-controls="nav-conan-macos" aria-selected="true" class="nav-link" data-bs-target="#nav-conan-macos-panel"
+              data-bs-toggle="tab" id="nav-conan-macos-tab" role="tab" type="button">MacOS
       </button>
-      <button aria-controls="nav-install-python-linux" aria-selected="false" class="nav-link"
-              data-bs-target="#nav-install-python-linux-panel" data-bs-toggle="tab" id="nav-install-python-linux-tab"
-              role="tab" type="button">Linux
+      <button aria-controls="nav-conan-linux" aria-selected="false" class="nav-link" data-bs-target="#nav-conan-linux-panel"
+              data-bs-toggle="tab" id="nav-conan-linux-tab" role="tab" type="button">Linux
       </button>
     </div>
   </nav>
-  <div class="tab-content" id="nav-install-python-content">
-    <div aria-labelledby="nav-install-python-window-tab" class="tab-pane fade show active"
-         id="nav-install-python-windows-panel"
+  <div class="tab-content" id="nav-conan-content">
+    <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
          role="tabpanel">
-        <pre><code class="language-powershell">winget install --id Python.Python.3.12 --source winget
-python -m ensurepip --upgrade
-pip install pipenv</code></pre>
+      <pre><code class="language-powershell">winget install --id JFrog.Conan --source winget</code></pre>
     </div>
 
-    <div aria-labelledby="nav-install-python-macos-tab" class="tab-pane fade show" id="nav-install-python-macos-panel"
+    <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
          role="tabpanel">
-        <pre><code class="language-bash">brew install python
-pip install pipenv</code></pre>
+        <pre><code class="language-bash">brew install conan</code>
+        </pre>
     </div>
 
-    <div aria-labelledby="nav-install-python-linux-tab" class="tab-pane fade show" id="nav-install-python-linux-panel"
+    <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
          role="tabpanel">
-        <pre><code class="language-bash">sudo apt install pipenv
-pip install pipenv</code></pre>
+      <pre><code class="language-bash">sudo apt install conan</code></pre>
     </div>
   </div>
-
-  <h3>How to install Pip &amp; Pipenv</h3>
-  Pip and Pipenv are two python package manager modules. They will help us in downloading the required dependencies.
-  <pre><code class="language-powershell">winget install --id Python.Python.3.12 --source winget
-python -m ensurepip --upgrade
-pip install pipenv</code></pre>
-
-  <h2>Conan</h2>
-  <p>
-    Conan is a C++ package manager. A quick tutorial can be found in <a
-      href="https://docs.conan.io/2/tutorial.html">conan.io</a> website.
-  </p>
 
   <p>
     For this tutorial I create some profiles and templates to easily use conan and create new projects from scratch.
     To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
   </p>
 
-  <pre><code class="language-bash">pipenv install conan
-pipenv run conan config install https://github.com/elvisdukaj/cppyoga_conan_config.git</code></pre>
 
   <p>
     The first command installs conan in a self-contained virtual environment. That means that conan won't be visible
     globally in your system. There are two ways to run conan.
+  </p>
 
-  <ol>
-    <li>
-      <p>
-        pipenv run allows to run a command inside the python virtual environment without explictly activate is:
-      </p>
-      <pre><code class="language-bash">pipenv run &lt; conan commands &gt;</code></pre>
-    </li>
-    <li>
-      Activate the virtual environment in the current shell by calling:
-      <pre><code class="language-bash">pipenv shell</code></pre>
-      <p>
-        After the environment is activated conan, and all the python modules, will be available in the current
-        session.
-      </p>
-    </li>
-  </ol>
 
   <h2>IDE</h2>
   <p>
@@ -397,7 +355,7 @@ pipenv run conan config install https://github.com/elvisdukaj/cppyoga_conan_conf
     Below a screenshot with all the required extensions:
   </p>
 
-  <img src="../images/01_ide_code_extensions.webp"/>
+  <img src="../images/01_ide_code_extensions.webp" alt="Visual Studio Code extension"/>
 
   <p>
     More information about how to set up a C++ environment can be found here.
@@ -437,7 +395,7 @@ pipenv run conan config install https://github.com/elvisdukaj/cppyoga_conan_conf
   </ol>
   <p>
     <strong>
-      If you're using Visual C++, use the Powersehll with the Visual Studio environment enabled.
+      If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
     </strong>
   </p>
 
@@ -453,18 +411,18 @@ pipenv run lunch_vscode</code></pre>
     Let's review line by line what is happening.
   <ol>
     <li>
-      <code>git clone</code> downloads the project from github to the cppyoga-image2ascii
+      <code>git clone</code> downloads the project from GitHub to the cppyoga-image2ascii
     </li>
     <li>
       <p>
-        <code>pipenv run build_msvc</code> downloads and install all the third party dependencies needed to buld our
+        <code>pipenv run build_msvc</code> downloads and install all the third party dependencies needed to build our
         projects.
         This command can take long the first time. After downloading and installing the dependencies,
         <code>conan</code> will
-        cache the binaries and it won't build them anymore. So the following calls will be much faster.
+        cache the binaries, and it won't build them anymore. So the following calls will be much faster.
       </p>
       <p>
-        In the Pipenv file is possible to define some convinent scripts. The above command is expanded like the
+        In the Pipenv file is possible to define some convenient scripts. The above command is expanded like the
         following:
       <pre><code class="language-bash">conan install . --profile:build cppyoga/msvc --settings build_type=Debug --profile:build cppyoga/msvc_build --build missing
 conan install . --profile:build cppyoga/msvc --settings build_type=Release --profile cppyoga/msvc_build --build missing</code></pre>
@@ -472,14 +430,14 @@ conan install . --profile:build cppyoga/msvc --settings build_type=Release --pro
         <code>conan install .</code> is used to download and build if necessary the required dependencies/
       </p>
       <p>
-        <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimazing the code,
+        <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the code,
         making it easier to debug but also slower.
         A Release build is the optimized version of the program, but it's harder to debug.
       </p>
       <p>
         <code>--profile PROFILE</code> indicates conan what profile use for building the package. A profile is a set
         of settings specifying how the executables
-        and the libraries will be build, this information includes the operating system, the used compiler
+        and the libraries will be built, this information includes the operating system, the used compiler
       </p>
     </li>
   </ol>
@@ -506,7 +464,7 @@ import std;
 using namespace std;
 
 int main() {
-  println("Hello Woorld!")
+  println("Hello World!")
 }
     </code>
   </pre> -->
