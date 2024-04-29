@@ -550,68 +550,60 @@
       </p>
 
       <p>
-        The following steps are required:
-
-      <ol>
-        <li>
-          Clone the git project.
-        </li>
-        <li>
-          Install the build and the release conan profiles.
-        </li>
-        <li>
-          Start the IDE from the environment.
-        </li>
-        <li>
-          Build and run the code from Visual Studio.
-        </li>
-        <li>
-          Build and run the code from the terminal.
-        </li>
-      </ol>
-      <p>
         <strong>
           If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
         </strong>
       </p>
 
-      <pre class="pre-scrollable"><code>echo "(1) Clone the project"
-git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
-cd cppyoga-image2ascii
-echo "(2) Install the debug and release profiles. This will build and install all the third party dependencies"
-conan build . --profile cppyoga/default --settings build_type=Debug --build missing
-conan build . --profile cppyoga/default --settings build_type=Release --build missing
-echo "(3) Lunch the IDE"
-code .</code></pre>
-
-      <p>
-        Let's review line by line what is happening.
       <ol>
         <li>
-          <code>git clone</code> downloads the project from GitHub to the cppyoga-image2ascii
+          <p>
+            Clone the project and jump inside the cloned directory.
+          </p>
+          <pre class="pre-scrollable"><code>git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
+cd cppyoga-image2ascii            
+          </code></pre>
         </li>
         <li>
           <p>
-            <code>conan build ... --build missing</code> downloads and install all the third party dependencies needed
-            to build our
-            projects. This command can take long the first time. After downloading and installing the dependencies,
-            <code>conan</code> will
-            cache the binaries, and it won't build them anymore. So the following calls will be much faster.
-            After the dependencies are downloaded and build if necessary thanks
-            to <code>--build missing</code> option. The project is finally compiled.
+            Buld the program from the command line:
           </p>
-
+          <pre class="pre-scrollable"><code>conan build . --profile cppyoga/default --build missing</code></pre>
           <p>
-            <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the
-            code,
-            making it easier to debug but also slower.
-            A Release build is the optimized version of the program, but it's harder to debug.
+            At this stage is not important understand the conan commands, this will be explained in the next lectures.
           </p>
+        </li>
+        <li>
           <p>
-            <code>--profile PROFILE</code> indicates conan what profile use for building the package. A profile is a set
-            of settings specifying how the executables
-            and the libraries will be built, this information includes the operating system, the used compiler
+            Lunch the application:
           </p>
+          <pre class="pre-scrollable"><code>./build/Release/image2ascii</code></pre>
+          <p>
+            After lunching the application, the default image will be download and converted to ASCII art!
+          </p>
+        </li>
+        <li>
+          <p>
+            After calling we can open Visual Studio Code.
+          </p>
+          <pre class="pre-scrollable"><code>code .</code></pre>
+          <p>
+            At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
+          </p>
+          <img alt="Visual Studio Code presets" src="/" />
+        </li>
+        <li>
+          <p>
+            Build from Visual Studio Code
+          </p>
+          <img alt="Visual Studio Code presets" src="/" />
+        </li>
+        
+        <li>
+          <p>
+            Run from Visual Studio Code
+          </p>
+          <img alt="Visual Studio Code presets" src="/" />
         </li>
       </ol>
     </main>
