@@ -1,22 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html data-bs-theme="auto" lang="en">
 
 <head>
-  <script src="assets/js/color-modes.js"></script>
-  <title>C++ Yoga - best way to learn C++</title>
+  <title>Setting the development environment</title>
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Elvis Dukaj" name="author">
-  <meta content="Hugo 0.122.0" name="generator">
-  <meta content="C++, programmimg, learn C+*, Conan, CMake, CLion, Visual Studio Code, vscode" name="keywords">
-  <meta name="description"
-    content="Master C++ programming with C++ Yoga. Interactive tutorials, exercises, and expert tips to elevate your coding skills.">
-  <meta name="robots" content="index, follow">
+  <script src="../assets/js/color-modes.js"></script>
 
+  <meta content="Elvis Dukaj" name="author" />
+  <meta content="Setting up correctly the development environment is a crucial factor for a successful software developer.
+    We will learn how to create an easy but still professional environment" name="description" />
+
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <!-- Bootstrap CSS -->
   <link href="https://getbootstrap.com/docs/5.3/examples/starter-template/" rel="canonical">
   <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
-  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../styles/prism.css" rel="stylesheet" />
 
   <style>
     .bd-placeholder-img {
@@ -72,7 +74,7 @@
     }
 
     .btn-bd-primary {
-      --bd-violet-bg: #712cf9;
+      --bd-violet-bg: #5922c6;
       --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
       --bs-btn-font-weight: 600;
@@ -96,7 +98,6 @@
       display: block !important;
     }
   </style>
-
 
 </head>
 
@@ -170,7 +171,6 @@
     </ul>
   </div>
 
-
   <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
     <symbol id="arrow-right-circle" viewBox="0 0 16 16">
       <path
@@ -193,7 +193,7 @@
           </svg>
           <span class="fs-4">C++ Yoga</span>
         </a>
-        
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
           aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -211,7 +211,8 @@
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li> -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="html/table-of-content.html" data-bs-toggle="dropdown" aria-expanded="false">Table of content</a>
+              <a class="nav-link dropdown-toggle" href="html/table-of-content.html" data-bs-toggle="dropdown"
+                aria-expanded="false">Table of content</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="html/ch01.html">Chapter 01</a></li>
                 <li><a class="dropdown-item" href="#">Chapter 02</a></li>
@@ -223,64 +224,56 @@
     </nav>
 
     <main>
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-body-emphasis">Introduction</h1>
-          <p>
-            This website aims to share my experience and bring you on a wonderful journey with C++. Learning a
-            programming
-            language is useless if not applied to real and concrete projects. I believe that it is much more important
-            to
-            be able to write professional programs that solve a particular problem than to have a deep knowledge of the
-            programming language from the beginning.
-          </p>
-          <p>
-            Learning a language doesn't make you a poet like learning a programming language won't make you a software
-            developer.
-          </p>
+      <h1 class="text-body-emphasis">Title</h1>
+      <hr class="col-12 mb-5">
 
-          <p>
-            One of the core values of this course is that it focuses on professional and practical applications. Most of
-            the courses start straight away on the language, forgetting how to structure a project, how to include
-            dependencies and ultimately, how to write useful applications.
-          </p>
+      <h2 class="text-body-emphasis">Title 2</h2>
+      <p>
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam.
+        Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
+        consectetur purus sit amet fermentum.
+      </p>
 
+      <h2 class="text-body-emphasis">Use of a tab</h2>
+      <nav>
+        <div class="nav nav-tabs" id="nav-template-tab" role="tablist">
+          <button aria-controls="nav-template-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-template-windows-panel" data-bs-toggle="tab" id="nav-template-window-tab" role="tab"
+            type="button">Windows
+          </button>
+          <button aria-controls="nav-template-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-template-macos-panel" data-bs-toggle="tab" id="nav-template-macos-tab" role="tab"
+            type="button">MacOS
+          </button>
+          <button aria-controls="nav-template-macos" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-template-linux-panel" data-bs-toggle="tab" id="nav-template-linux-tab" role="tab"
+            type="button">Linux
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-template-content">
+        <div aria-labelledby="nav-template-window-tab" class="tab-pane fade show active" id="nav-template-windows-panel"
+          role="tabpanel">
           <p>
-            This blog aims to fills this gape and make you comfortable with C++, learning only the best practices using
-            clean code and the best methodologies. In this journey you'll write useful applications and engaging games
-            that can be executed on Windows, MacOS, Linux and Android ( maybe on iOS a iPadOS).
+            This is a paragraph that is valid only for Windows. Below some pre-formatted code:
           </p>
+          <pre class="pre-scrollable"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
         </div>
 
-        <hr class="col-12 mb-5">
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <div class="mb-1 text-muted">Chapter 01</div>
-              <p class="card-text mb-auto">Setting the development environment.</p>
-              <a href="html/ch01.html">Continue reading</a>
-            </div>
-            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-              alt="Setting the development environment" src="images/01_asciidoc_transformation_400x500.png"
-              data-holder-rendered="true" style="width: 200px; height: 250px;">
-          </div>
+        <div aria-labelledby="nav-template-macos-tab" class="tab-pane fade show" id="nav-template-macos-panel"
+          role="tabpanel">
+          <p>
+            This is a paragraph that is valid only for macOS. Below some pre-formatted code:
+          </p>
+          <pre class="pre-scrollable"><code>brew install macOsPackage</code></pre>
         </div>
 
-
-        <div class="col-md-6">
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-              <div class="mb-1 text-muted">Chapter 02</div>
-              <p class="card-text mb-auto">Hello World</p>
-              <a href="html/ch01.html">Continue reading</a>
-            </div>
-            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-              alt="Setting the development environment" src="images/01_asciidoc_transformation_400x500.png"
-              data-holder-rendered="true" style="width: 200px; height: 250px;">
-          </div>
+        <div aria-labelledby="nav-template-linux-tab" class="tab-pane fade show" id="nav-template-linux-panel"
+          role="tabpanel">
+          <p>
+            This is a paragraph that is valid only for Linux. Below some pre-formatted code:
+          </p>
+          <pre class="pre-scrollable"><code>sudo apt install myLinuxPackage</code></pre>
         </div>
       </div>
     </main>
@@ -290,7 +283,8 @@
     </footer>
   </div>
 
-  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

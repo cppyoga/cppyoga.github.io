@@ -6,580 +6,609 @@
 
   <script src="../assets/js/color-modes.js"></script>
 
-  <meta content="Elvis Dukaj" name="author"/>
+  <meta content="Elvis Dukaj" name="author" />
   <meta content="Setting up correctly the development environment is a crucial factor for a successful software developer.
-    We will learn how to create an easy but still professional environment" name="description"/>
+    We will learn how to create an easy but still professional environment" name="description" />
 
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 
   <!-- Bootstrap CSS -->
   <link href="https://getbootstrap.com/docs/5.3/examples/starter-template/" rel="canonical">
   <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="../styles/prism.css" rel="stylesheet"/>
+  <link href="../styles/prism.css" rel="stylesheet" />
 
   <style>
-      .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-      }
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
 
-      @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-          }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      .b-example-divider {
-          width: 100%;
-          height: 3rem;
-          background-color: rgba(0, 0, 0, .1);
-          border: solid rgba(0, 0, 0, .15);
-          border-width: 1px 0;
-          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-vr {
-          flex-shrink: 0;
-          width: 1.5rem;
-          height: 100vh;
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .bi {
-          vertical-align: -.125em;
-          fill: currentColor;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .btn-bd-primary {
-          --bd-violet-bg: #5922c6;
-          --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    .btn-bd-primary {
+      --bd-violet-bg: #5922c6;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-          --bs-btn-font-weight: 600;
-          --bs-btn-color: var(--bs-white);
-          --bs-btn-bg: var(--bd-violet-bg);
-          --bs-btn-border-color: var(--bd-violet-bg);
-          --bs-btn-hover-color: var(--bs-white);
-          --bs-btn-hover-bg: #6528e0;
-          --bs-btn-hover-border-color: #6528e0;
-          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-          --bs-btn-active-color: var(--bs-btn-hover-color);
-          --bs-btn-active-bg: #5a23c8;
-          --bs-btn-active-border-color: #5a23c8;
-      }
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-      .bd-mode-toggle {
-          z-index: 1500;
-      }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-          display: block !important;
-      }
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
   </style>
 
 </head>
 
 <body>
-<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="check2" viewBox="0 0 16 16">
-    <path
-        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-  </symbol>
-  <symbol id="circle-half" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-  </symbol>
-  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-    <path
-        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-    <path
-        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-  </symbol>
-  <symbol id="sun-fill" viewBox="0 0 16 16">
-    <path
-        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-  </symbol>
-</svg>
+  <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
 
-<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-  <button aria-expanded="false"
-          aria-label="Toggle theme (auto)"
-          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-          data-bs-toggle="dropdown"
-          id="bd-theme"
-          type="button">
-    <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
-      <use href="#circle-half"></use>
-    </svg>
-    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-  </button>
-  <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
-    <li>
-      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="#sun-fill"></use>
-        </svg>
-        Light
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="#check2"></use>
-        </svg>
-      </button>
-    </li>
-    <li>
-      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="#moon-stars-fill"></use>
-        </svg>
-        Dark
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="#check2"></use>
-        </svg>
-      </button>
-    </li>
-    <li>
-      <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="#circle-half"></use>
-        </svg>
-        Auto
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="#check2"></use>
-        </svg>
-      </button>
-    </li>
-  </ul>
-</div>
-
-<svg class="d-none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="arrow-right-circle" viewBox="0 0 16 16">
-    <path
-        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-  </symbol>
-  <symbol id="bootstrap" viewBox="0 0 118 94">
-    <title>Bootstrap</title>
-    <path clip-rule="evenodd"
-          d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-          fill-rule="evenodd"></path>
-  </symbol>
-</svg>
-
-<div class="col-lg-8 mx-auto p-4 py-md-5">
-  <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-    <a class="d-flex align-items-center text-body-emphasis text-decoration-none" href="/">
-      <svg class="bi me-2" height="32" width="40">
-        <use xlink:href="#bootstrap"/>
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button aria-expanded="false" aria-label="Toggle theme (auto)"
+      class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" id="bd-theme"
+      type="button">
+      <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
+        <use href="#circle-half"></use>
       </svg>
-      <span class="fs-4">C++ Yoga</span>
-    </a>
-  </header>
-
-  <main>
-    <h1 class="text-body-emphasis">Setting up the C++ environment</h1>
-
-    <hr class="col-3 col-md-2 mb-5">
-
-    <h2 class="text-body-emphasis">Objectives</h2>
-    <p class="fs-5 col-md-8">
-      Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and Linux.
-    <ul>
-      <li>How to install the C++ compiler on Windows, macOS and Linux.</li>
-      <li>How to install Python and all the required Python modules.</li>
-      <li>How to install Conan, the C++ package manager.</li>
-      <li>How to install Visual Studio Code.</li>
-      <li>How to run our first application.</li>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
+      <li>
+        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          type="button">
+          <svg class="bi me-2 opacity-50" height="1em" width="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" height="1em" width="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          type="button">
+          <svg class="bi me-2 opacity-50" height="1em" width="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" height="1em" width="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          type="button">
+          <svg class="bi me-2 opacity-50" height="1em" width="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" height="1em" width="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
     </ul>
+  </div>
 
-    <h2 class="text-body-emphasis">What we will learn</h2>
-    <p>
-      After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download a
-      picture from an url, and it will convert it in a coloured ascii art.
-      We will be able to download and compile all the required dependencies, build and run the program and make small
-      changes to it.
-    </p>
+  <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="arrow-right-circle" viewBox="0 0 16 16">
+      <path
+        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+    </symbol>
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <title>Bootstrap</title>
+      <path clip-rule="evenodd"
+        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+        fill-rule="evenodd"></path>
+    </symbol>
+  </svg>
 
-    <p>
-      The program is a slightly modification of the <a
-        href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">blog.conan.io</a>
-      blog post.
-    </p>
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/">
+          <svg class="bi me-2" height="32" width="40">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">C++ Yoga</span>
+        </a>
 
-    <img alt="preview" class="img-fluid" src="../images/01_asciidoc_transformation.png">
-
-    <h2 class="text-body-emphasis">Introduction</h2>
-    <p>
-      There are several factors to consider when setting up the environment:
-    </p>
-
-    <ol>
-      <li>It should be self-contained and reproducible</li>
-      <li>It should be tool-friendly</li>
-    </ol>
-
-    <p>
-      A self-contained working environment makes collaboration with other people much more straightforward and makes
-      setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
-      honestly think this is overkill. A working environment should require the bare minimum dependencies from the
-      system and nothing more.
-    </p>
-
-    <p>
-      The environment should be able to build our project and simply the development process. Tools like auto
-      competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for our
-      workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
-      Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
-    </p>
-
-    <h2 class="text-body-emphasis">Terminal</h2>
-    <nav>
-      <div class="nav nav-tabs" id="nav-terminal-tab" role="tablist">
-        <button aria-controls="nav-terminal-windows" aria-selected="true" class="nav-link active"
-                data-bs-target="#nav-terminal-windows-panel" data-bs-toggle="tab" id="nav-terminal-window-tab"
-                role="tab"
-                type="button">Windows
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <button aria-controls="nav-terminal-macos" aria-selected="true" class="nav-link"
-                data-bs-target="#nav-terminal-macos-panel" data-bs-toggle="tab" id="nav-terminal-macos-tab" role="tab"
-                type="button">MacOS
-        </button>
-        <button aria-controls="nav-terminal-macos" aria-selected="false" class="nav-link"
-                data-bs-target="#nav-terminal-linux-panel" data-bs-toggle="tab" id="nav-terminal-linux-tab" role="tab"
-                type="button">Linux
-        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="html/table-of-content.html" data-bs-toggle="dropdown"
+                aria-expanded="false">Table of content</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="html/ch01.html">Chapter 01</a></li>
+                <li><a class="dropdown-item" href="#">Chapter 02</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <div class="tab-content" id="nav-terminal-content">
-      <div aria-labelledby="nav-terminal-window-tab" class="tab-pane fade show active" id="nav-terminal-windows-panel"
-           role="tabpanel">
-        <p>
-          I highly recommend installing winget on Windows as it will simplify download packages.
-        </p>
-        <p>
-          The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
-        </p>
-        <pre class="pre-scrollable"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
-      </div>
 
-      <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
-           role="tabpanel">
-        <p>
-          On macOS, I suggest to install iTerm2.
-        </p>
-        <p>
-          I suggest to install also Homebrew as a package manager.
-        </p>
-      </div>
+    <main>
+      <h1 class="text-body-emphasis">Setting up the C++ environment</h1>
 
-      <div aria-labelledby="nav-terminal-linux-tab" class="tab-pane fade show" id="nav-terminal-linux-panel"
-           role="tabpanel">
-        <p>
-          Nothing to do on Linux :) .
-        </p>
-      </div>
-    </div>
+      <hr class="col-12 mb-5">
 
-    <h2 class="text-body-emphasis">C++ Toolchain</h2>
-    <p>
-      The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in the
-      target machine.
-    </p>
+      <h2 class="text-body-emphasis">Objectives</h2>
+      <p class="fs-5 col-md-8">
+        Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and
+        Linux.
+      <ul>
+        <li>How to install the C++ compiler on Windows, macOS and Linux.</li>
+        <li>How to install Python and all the required Python modules.</li>
+        <li>How to install Conan, the C++ package manager.</li>
+        <li>How to install Visual Studio Code.</li>
+        <li>How to run our first application.</li>
+      </ul>
 
-    <p>
-      There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular. These
-      compilers are very different from each other, and learning singularly all of them takes a lot of time and effort.
-      To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
-    </p>
-
-    <p>
-      A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
-      for formatting the code, static analysis, and compilers.
-    </p>
-
-    <h3>How to install the C++ toolchain</h3>
-    <nav>
-      <div class="nav nav-tabs" id="nav-toolchain-tab" role="tablist">
-        <button aria-controls="nav-toolchain-windows" aria-selected="true" class="nav-link active"
-                data-bs-target="#nav-toolchain-windows-panel" data-bs-toggle="tab" id="nav-toolchain-window-tab"
-                role="tab"
-                type="button">Windows
-        </button>
-        <button aria-controls="nav-toolchain-macos" aria-selected="true" class="nav-link"
-                data-bs-target="#nav-toolchain-macos-panel" data-bs-toggle="tab" id="nav-toolchain-macos-tab" role="tab"
-                type="button">MacOS
-        </button>
-        <button aria-controls="nav-toolchain-linux" aria-selected="false" class="nav-link"
-                data-bs-target="#nav-toolchain-linux-panel" data-bs-toggle="tab" id="nav-toolchain-linux-tab" role="tab"
-                type="button">Linux
-        </button>
-      </div>
-    </nav>
-    <div class="tab-content" id="nav-toolchain-content">
-      <div aria-labelledby="nav-toolchain-window-tab" class="tab-pane fade show active" id="nav-toolchain-windows-panel"
-           role="tabpanel">
-        <p>
-          On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
-          download Visual Studio Community for free.
-        </p>
-        <p>
-          There are two options to install it: via winget or downloading it from the browser. Using winget from the
-          Windows Terminal:
-        </p>
-        <pre class="pre-scrollable"><code>winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code></pre>
-      </div>
-
-      <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
-           role="tabpanel">
-        <p>
-          Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
-        </p>
-        <pre class="pre-scrollable"><code>xcode-select --install</code></pre>
-      </div>
-      <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
-           role="tabpanel">
-        <p>
-          On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
-          messages than GCC, and it's easier for beginners to understand the issues.
-        </p>
-        <p>
-          Type the following command from the terminal:
-        </p>
-        <pre class="pre-scrollable"><code>sudo apt install clang</code></pre>
-      </div>
-    </div>
-
-    <h2 class="text-body-emphasis">Install Git</h2>
-    <p>
-      Git is a software control version. No knowledge of git will be required during this course.
-    </p>
-    <nav>
-      <div class="nav nav-tabs" id="nav-git-tab" role="tablist">
-        <button aria-controls="nav-git-windows" aria-selected="true" class="nav-link active"
-                data-bs-target="#nav-git-windows-panel" data-bs-toggle="tab" id="nav-git-window-tab" role="tab"
-                type="button">Windows
-        </button>
-        <button aria-controls="nav-git-macos" aria-selected="true" class="nav-link"
-                data-bs-target="#nav-git-macos-panel"
-                data-bs-toggle="tab" id="nav-git-macos-tab" role="tab" type="button">MacOS
-        </button>
-        <button aria-controls="nav-git-linux" aria-selected="false" class="nav-link"
-                data-bs-target="#nav-git-linux-panel"
-                data-bs-toggle="tab" id="nav-git-linux-tab" role="tab" type="button">Linux
-        </button>
-      </div>
-    </nav>
-    <div class="tab-content" id="nav-git-content">
-      <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
-           role="tabpanel">
-        <pre class="pre-scrollable"><code>winget install --id Git.Git --source winget</code></pre>
-      </div>
-
-      <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel"
-           role="tabpanel">
-        <pre class="pre-scrollable"><code>brew install git</code></pre>
-      </div>
-
-      <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel"
-           role="tabpanel">
-        <pre class="pre-scrollable"><code>sudo apt install git</code></pre>
-      </div>
-    </div>
-
-    <div>
-      <h2 class="text-body-emphasis">Conan</h2>
+      <h2 class="text-body-emphasis">What we will learn</h2>
       <p>
-        Conan is a C++ package manager. A quick tutorial can be found in <a
-          href="https://docs.conan.io/2/tutorial.html">conan.io</a>
-        website.
+        After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download
+        a
+        picture from an url, and it will convert it in a coloured ascii art.
+        We will be able to download and compile all the required dependencies, build and run the program and make small
+        changes to it.
       </p>
 
+      <p>
+        The program is a slightly modification of the <a
+          href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">blog.conan.io</a>
+        blog post.
+      </p>
+
+      <img alt="preview" class="img-fluid" src="../images/01_asciidoc_transformation.png">
+
+      <h2 class="text-body-emphasis">Introduction</h2>
+      <p>
+        There are several factors to consider when setting up the environment:
+      </p>
+
+      <ol>
+        <li>It should be self-contained and reproducible</li>
+        <li>It should be tool-friendly</li>
+      </ol>
+
+      <p>
+        A self-contained working environment makes collaboration with other people much more straightforward and makes
+        setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
+        honestly think this is overkill. A working environment should require the bare minimum dependencies from the
+        system and nothing more.
+      </p>
+
+      <p>
+        The environment should be able to build our project and simply the development process. Tools like auto
+        competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for
+        our
+        workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
+        Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
+      </p>
+
+      <h2 class="text-body-emphasis">Terminal</h2>
       <nav>
-        <div class="nav nav-tabs" id="nav-conan-tab" role="tablist">
-          <button aria-controls="nav-conan-windows" aria-selected="true" class="nav-link active"
-                  data-bs-target="#nav-conan-windows-panel" data-bs-toggle="tab" id="nav-conan-window-tab" role="tab"
-                  type="button">Windows
+        <div class="nav nav-tabs" id="nav-terminal-tab" role="tablist">
+          <button aria-controls="nav-terminal-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-terminal-windows-panel" data-bs-toggle="tab" id="nav-terminal-window-tab" role="tab"
+            type="button">Windows
           </button>
-          <button aria-controls="nav-conan-macos" aria-selected="true" class="nav-link"
-                  data-bs-target="#nav-conan-macos-panel"
-                  data-bs-toggle="tab" id="nav-conan-macos-tab" role="tab" type="button">MacOS
+          <button aria-controls="nav-terminal-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-terminal-macos-panel" data-bs-toggle="tab" id="nav-terminal-macos-tab" role="tab"
+            type="button">MacOS
           </button>
-          <button aria-controls="nav-conan-linux" aria-selected="false" class="nav-link"
-                  data-bs-target="#nav-conan-linux-panel"
-                  data-bs-toggle="tab" id="nav-conan-linux-tab" role="tab" type="button">Linux
+          <button aria-controls="nav-terminal-macos" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-terminal-linux-panel" data-bs-toggle="tab" id="nav-terminal-linux-tab" role="tab"
+            type="button">Linux
           </button>
         </div>
       </nav>
-      <div class="tab-content" id="nav-conan-content">
-        <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
-             role="tabpanel">
-          <pre class="pre-scrollable"><code>winget install --id JFrog.Conan --source winget</code></pre>
+      <div class="tab-content" id="nav-terminal-content">
+        <div aria-labelledby="nav-terminal-window-tab" class="tab-pane fade show active" id="nav-terminal-windows-panel"
+          role="tabpanel">
+          <p>
+            I highly recommend installing winget on Windows as it will simplify download packages.
+          </p>
+          <p>
+            The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
+          </p>
+          <pre class="pre-scrollable"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
         </div>
 
-        <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
-             role="tabpanel">
-          <pre class="pre-scrollable"><code>brew install conan</code></pre>
+        <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
+          role="tabpanel">
+          <p>
+            On macOS, I suggest to install iTerm2.
+          </p>
+          <p>
+            I suggest to install also Homebrew as a package manager.
+          </p>
         </div>
 
-        <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
-             role="tabpanel">
-          <pre class="pre-scrollable"><code>sudo apt install conan</code></pre>
+        <div aria-labelledby="nav-terminal-linux-tab" class="tab-pane fade show" id="nav-terminal-linux-panel"
+          role="tabpanel">
+          <p>
+            Nothing to do on Linux :) .
+          </p>
         </div>
       </div>
 
-      <p>After installing conan we can create a default profile</p>
-      <pre><code>conan profile detect</code></pre>
-
+      <h2 class="text-body-emphasis">C++ Toolchain</h2>
       <p>
-        It's also possible, and recommender, to install conan via a Python
-        virtual environment, for instance using <code>pipenv</code>. This requires
-        to install Python and <code>pipenv</code> but it also allows to have a full
-        self-contained environment.
+        The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in
+        the
+        target machine.
       </p>
 
       <p>
-        For this tutorial I create some profiles and templates to easily use conan and create new projects from scratch.
-        To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
+        There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular.
+        These
+        compilers are very different from each other, and learning singularly all of them takes a lot of time and
+        effort.
+        To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
       </p>
 
-      <pre><code>conan config install --type git https://github.com/elvisdukaj/cppyoga_conan_config.git</code></pre>
+      <p>
+        A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
+        for formatting the code, static analysis, and compilers.
+      </p>
 
-    </div>
+      <h3>How to install the C++ toolchain</h3>
+      <nav>
+        <div class="nav nav-tabs" id="nav-toolchain-tab" role="tablist">
+          <button aria-controls="nav-toolchain-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-toolchain-windows-panel" data-bs-toggle="tab" id="nav-toolchain-window-tab" role="tab"
+            type="button">Windows
+          </button>
+          <button aria-controls="nav-toolchain-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-toolchain-macos-panel" data-bs-toggle="tab" id="nav-toolchain-macos-tab" role="tab"
+            type="button">MacOS
+          </button>
+          <button aria-controls="nav-toolchain-linux" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-toolchain-linux-panel" data-bs-toggle="tab" id="nav-toolchain-linux-tab" role="tab"
+            type="button">Linux
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-toolchain-content">
+        <div aria-labelledby="nav-toolchain-window-tab" class="tab-pane fade show active"
+          id="nav-toolchain-windows-panel" role="tabpanel">
+          <p>
+            On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
+            download Visual Studio Community for free.
+          </p>
+          <p>
+            There are two options to install it: via winget or downloading it from the browser. Using winget from the
+            Windows Terminal:
+          </p>
+          <pre
+            class="pre-scrollable"><code>winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code></pre>
+        </div>
 
-    <h2 class="text-body-emphasis">IDE</h2>
-    <p>
-      The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
-      contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
-      Many available IDEs exist, but Visual Studio Code has become one of the most widespread. It's free and works on
-      all the major platforms.
-    </p>
-
-    <h3>How to install Visual Studio Code</h3>
-    <nav>
-      <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
-        <button aria-controls="nav-install-ide-windows" aria-selected="true" class="nav-link active"
-                data-bs-target="#nav-install-ide-windows-panel" data-bs-toggle="tab" id="nav-install-ide-window-tab"
-                role="tab" type="button">Windows
-        </button>
-        <button aria-controls="nav-install-ide-macos" aria-selected="true" class="nav-link"
-                data-bs-target="#nav-install-ide-macos-panel" data-bs-toggle="tab" id="nav-install-pytidehon-macos-tab"
-                role="tab"
-                type="button">MacOS
-        </button>
-        <button aria-controls="nav-install-ide-linux" aria-selected="false" class="nav-link"
-                data-bs-target="#nav-install-ide-linux-panel" data-bs-toggle="tab" id="nav-install-ide-linux-tab"
-                role="tab"
-                type="button">Linux
-        </button>
+        <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
+          role="tabpanel">
+          <p>
+            Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
+          </p>
+          <pre class="pre-scrollable"><code>xcode-select --install</code></pre>
+        </div>
+        <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
+          role="tabpanel">
+          <p>
+            On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
+            messages than GCC, and it's easier for beginners to understand the issues.
+          </p>
+          <p>
+            Type the following command from the terminal:
+          </p>
+          <pre class="pre-scrollable"><code>sudo apt install clang</code></pre>
+        </div>
       </div>
-    </nav>
-    <div class="tab-content" id="nav-install-ide-content">
-      <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
-           id="nav-install-ide-windows-panel"
-           role="tabpanel">
-        <pre
+
+      <h2 class="text-body-emphasis">Install Git</h2>
+      <p>
+        Git is a software control version. No knowledge of git will be required during this course.
+      </p>
+      <nav>
+        <div class="nav nav-tabs" id="nav-git-tab" role="tablist">
+          <button aria-controls="nav-git-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-git-windows-panel" data-bs-toggle="tab" id="nav-git-window-tab" role="tab"
+            type="button">Windows
+          </button>
+          <button aria-controls="nav-git-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-git-macos-panel" data-bs-toggle="tab" id="nav-git-macos-tab" role="tab"
+            type="button">MacOS
+          </button>
+          <button aria-controls="nav-git-linux" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-git-linux-panel" data-bs-toggle="tab" id="nav-git-linux-tab" role="tab"
+            type="button">Linux
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-git-content">
+        <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
+          role="tabpanel">
+          <pre class="pre-scrollable"><code>winget install --id Git.Git --source winget</code></pre>
+        </div>
+
+        <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel" role="tabpanel">
+          <pre class="pre-scrollable"><code>brew install git</code></pre>
+        </div>
+
+        <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel" role="tabpanel">
+          <pre class="pre-scrollable"><code>sudo apt install git</code></pre>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-body-emphasis">Conan</h2>
+        <p>
+          Conan is a C++ package manager. A quick tutorial can be found in <a
+            href="https://docs.conan.io/2/tutorial.html">conan.io</a>
+          website.
+        </p>
+
+        <nav>
+          <div class="nav nav-tabs" id="nav-conan-tab" role="tablist">
+            <button aria-controls="nav-conan-windows" aria-selected="true" class="nav-link active"
+              data-bs-target="#nav-conan-windows-panel" data-bs-toggle="tab" id="nav-conan-window-tab" role="tab"
+              type="button">Windows
+            </button>
+            <button aria-controls="nav-conan-macos" aria-selected="true" class="nav-link"
+              data-bs-target="#nav-conan-macos-panel" data-bs-toggle="tab" id="nav-conan-macos-tab" role="tab"
+              type="button">MacOS
+            </button>
+            <button aria-controls="nav-conan-linux" aria-selected="false" class="nav-link"
+              data-bs-target="#nav-conan-linux-panel" data-bs-toggle="tab" id="nav-conan-linux-tab" role="tab"
+              type="button">Linux
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-conan-content">
+          <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
+            role="tabpanel">
+            <pre class="pre-scrollable"><code>winget install --id JFrog.Conan --source winget</code></pre>
+          </div>
+
+          <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
+            role="tabpanel">
+            <pre class="pre-scrollable"><code>brew install conan</code></pre>
+          </div>
+
+          <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
+            role="tabpanel">
+            <pre class="pre-scrollable"><code>sudo apt install conan</code></pre>
+          </div>
+        </div>
+
+        <p>After installing conan we can create a default profile</p>
+        <pre><code>conan profile detect</code></pre>
+
+        <p>
+          It's also possible, and recommender, to install conan via a Python
+          virtual environment, for instance using <code>pipenv</code>. This requires
+          to install Python and <code>pipenv</code> but it also allows to have a full
+          self-contained environment.
+        </p>
+
+        <p>
+          For this tutorial I create some profiles and templates to easily use conan and create new projects from
+          scratch.
+          To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
+        </p>
+
+        <pre><code>conan config install --type git https://github.com/elvisdukaj/cppyoga_conan_config.git</code></pre>
+
+      </div>
+
+      <h2 class="text-body-emphasis">IDE</h2>
+      <p>
+        The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
+        contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
+        Many available IDEs exist, but Visual Studio Code has become one of the most widespread. It's free and works on
+        all the major platforms.
+      </p>
+
+      <h3>How to install Visual Studio Code</h3>
+      <nav>
+        <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
+          <button aria-controls="nav-install-ide-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-install-ide-windows-panel" data-bs-toggle="tab" id="nav-install-ide-window-tab"
+            role="tab" type="button">Windows
+          </button>
+          <button aria-controls="nav-install-ide-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-install-ide-macos-panel" data-bs-toggle="tab" id="nav-install-pytidehon-macos-tab"
+            role="tab" type="button">MacOS
+          </button>
+          <button aria-controls="nav-install-ide-linux" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-install-ide-linux-panel" data-bs-toggle="tab" id="nav-install-ide-linux-tab" role="tab"
+            type="button">Linux
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-install-ide-content">
+        <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
+          id="nav-install-ide-windows-panel" role="tabpanel">
+          <pre
             class="pre-scrollable"><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+        </div>
+
+        <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
+          role="tabpanel">
+          <pre class="pre-scrollable"><code>brew install visual-studio-code</code></pre>
+        </div>
+
+        <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
+          role="tabpanel">
+          <pre class="pre-scrollable"><code>sudo snap install --classic code</code></pre>
+        </div>
       </div>
 
-      <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
-           role="tabpanel">
-        <pre class="pre-scrollable"><code>brew install visual-studio-code</code></pre>
-      </div>
+      <h3>Setting up Visual Studio Code</h3>
+      <p>
+        Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press
+        <kbd><kbd>Alt</kbd>
+          + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>
+        or
+        (<kbd><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>) and type “Shell Command: install 'code' command in PATH“
+      </p>
 
-      <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
-           role="tabpanel">
-        <pre class="pre-scrollable"><code>sudo snap install --classic code</code></pre>
-      </div>
-    </div>
+      <img alt="Visual Studio setting" class="img-fluid" src="../images/01_ide_code_on_path.webp" />
 
-    <h3>Setting up Visual Studio Code</h3>
-    <p>
-      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press <kbd><kbd>Alt</kbd>
-      + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>
-      or
-      (<kbd><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>P</kbd></kbd>) and type “Shell Command: install 'code' command in PATH“
-    </p>
+      <p>
+        The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or ⌘+⇧+P
+        and
+        the extension's name. The following extensions are required:
+      </p>
 
-    <img alt="Visual Studio setting" class="img-fluid" src="../images/01_ide_code_on_path.webp"/>
+      <ul>
+        <li>C/C++</li>
+        <li>C/C++ Extension Pack</li>
+        <li>C/C++ Themes (Optional)</li>
+        <li>CMake</li>
+        <li>CMake Tools</li>
+      </ul>
 
-    <p>
-      The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or ⌘+⇧+P and
-      the extension's name. The following extensions are required:
-    </p>
+      <p>
+        Below a screenshot with all the required extensions:
+      </p>
 
-    <ul>
-      <li>C/C++</li>
-      <li>C/C++ Extension Pack</li>
-      <li>C/C++ Themes (Optional)</li>
-      <li>CMake</li>
-      <li>CMake Tools</li>
-    </ul>
+      <img alt="Visual Studio Code extension" class="img-fluid" src="../images/01_ide_code_extensions.webp" />
 
-    <p>
-      Below a screenshot with all the required extensions:
-    </p>
+      <p>
+        More information about how to set up a C++ environment can be found here.
+      </p>
 
-    <img alt="Visual Studio Code extension" class="img-fluid" src="../images/01_ide_code_extensions.webp"/>
+      <h2 class="text-body-emphasis">Let's build our first program</h2>
+      <p>
+        Now that we have finally set up the environment we are able to build a complex program. The goal is to be build
+        and run an application and not
+        to understand what is the code doing.
+      </p>
 
-    <p>
-      More information about how to set up a C++ environment can be found here.
-    </p>
+      <p>
+        The following steps are required:
 
-    <h2 class="text-body-emphasis">Let's build our first program</h2>
-    <p>
-      Now that we have finally set up the environment we are able to build a complex program. The goal is to be build
-      and run an application and not
-      to understand what is the code doing.
-    </p>
+      <ol>
+        <li>
+          Clone the git project.
+        </li>
+        <li>
+          Install the build and the release conan profiles.
+        </li>
+        <li>
+          Start the IDE from the environment.
+        </li>
+        <li>
+          Build and run the code from Visual Studio.
+        </li>
+        <li>
+          Build and run the code from the terminal.
+        </li>
+      </ol>
+      <p>
+        <strong>
+          If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
+        </strong>
+      </p>
 
-    <p>
-      The following steps are required:
-
-    <ol>
-      <li>
-        Clone the git project.
-      </li>
-      <li>
-        Install the build and the release conan profiles.
-      </li>
-      <li>
-        Start the IDE from the environment.
-      </li>
-      <li>
-        Build and run the code from Visual Studio.
-      </li>
-      <li>
-        Build and run the code from the terminal.
-      </li>
-    </ol>
-    <p>
-      <strong>
-        If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
-      </strong>
-    </p>
-
-    <pre class="pre-scrollable"><code>echo "(1) Clone the project"
+      <pre class="pre-scrollable"><code>echo "(1) Clone the project"
 git clone https://github.com/elvisdukaj/cppyoga-image2ascii.git
 cd cppyoga-image2ascii
 echo "(2) Install the debug and release profiles. This will build and install all the third party dependencies"
@@ -588,41 +617,40 @@ conan build . --profile cppyoga/default --settings build_type=Release --build mi
 echo "(3) Lunch the IDE"
 code .</code></pre>
 
-    <p>
-      Let's review line by line what is happening.
-    <ol>
-      <li>
-        <code>git clone</code> downloads the project from GitHub to the cppyoga-image2ascii
-      </li>
-      <li>
-        <p>
-          <code>conan build ... --build missing</code> downloads and install all the third party dependencies needed to build our
-          projects. This command can take long the first time. After downloading and installing the dependencies,
-          <code>conan</code> will
-          cache the binaries, and it won't build them anymore. So the following calls will be much faster.
-          After the dependencies are downloaded and build if necessary thanks
-          to <code>--build missing</code> option. The project is finally compiled.
-        </p>
+      <p>
+        Let's review line by line what is happening.
+      <ol>
+        <li>
+          <code>git clone</code> downloads the project from GitHub to the cppyoga-image2ascii
+        </li>
+        <li>
+          <p>
+            <code>conan build ... --build missing</code> downloads and install all the third party dependencies needed
+            to build our
+            projects. This command can take long the first time. After downloading and installing the dependencies,
+            <code>conan</code> will
+            cache the binaries, and it won't build them anymore. So the following calls will be much faster.
+            After the dependencies are downloaded and build if necessary thanks
+            to <code>--build missing</code> option. The project is finally compiled.
+          </p>
 
-        <p>
-          <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the code,
-          making it easier to debug but also slower.
-          A Release build is the optimized version of the program, but it's harder to debug.
-        </p>
-        <p>
-          <code>--profile PROFILE</code> indicates conan what profile use for building the package. A profile is a set
-          of settings specifying how the executables
-          and the libraries will be built, this information includes the operating system, the used compiler
-        </p>
-      </li>
-    </ol>
-  </main>
-</div>
+          <p>
+            <code>--settings build_type=Debug</code> says to make a Debug build. A debug build is not optimizing the
+            code,
+            making it easier to debug but also slower.
+            A Release build is the optimized version of the program, but it's harder to debug.
+          </p>
+          <p>
+            <code>--profile PROFILE</code> indicates conan what profile use for building the package. A profile is a set
+            of settings specifying how the executables
+            and the libraries will be built, this information includes the operating system, the used compiler
+          </p>
+        </li>
+      </ol>
+    </main>
+  </div>
 
-<script src="../js/prism.js"></script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
