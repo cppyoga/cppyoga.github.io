@@ -83,6 +83,7 @@
   
   .srccode {
     fill: currentColor;
-    border: 2px solid black;
+    border: 2px solid;
     padding-bottom: 1rem;
+    padding-top: 1rem;
   }
