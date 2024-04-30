@@ -472,6 +472,23 @@
         all the major platforms.
       </p>
 
+      <p>
+        Other available options are:
+        
+        <ul>
+          <li>
+            <a href="https://visualstudio.microsoft.com">Visual Studio</a>: it's working only on Windows and is the most used IDE on this 
+            platform. The comunity edition (CE) is out of charge for students and small companies.
+          </li>
+          <li>
+            <a href="https://www.jetbrains.com/clion/promo/?msclkid=f7483f5942d11c8363b45969985abf34&utm_source=bing&utm_medium=cpc&utm_campaign=EMEA_en_WEST_Clion_Branded&utm_term=clion&utm_content=clion">
+              CLion
+            </a>: it works very well on Windows, Linux and macOS. It's one of the best IDEs for C++
+            and is out of charge for students. This is also my favourite IDE.
+          </li>
+        </ul>
+      </p>
+
       <h3>How to install Visual Studio Code</h3>
       <nav>
         <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
@@ -555,6 +572,8 @@
         </strong>
       </p>
 
+      <h3>From the terminal</h3>
+
       <ol>
         <li>
           <p>
@@ -583,29 +602,81 @@ cd cppyoga-image2ascii
           </p>
           <img alt="Output of the image2ascii" src="/images/01_image2ascii_output.png" class="img-fluid" >
         </li>
-        <li>
-          <p>
-            After calling we can open Visual Studio Code.
-          </p>
-          <pre class="pre-scrollable"><code>code .</code></pre>
-          <p>
-            At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
-          </p>
-          <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscide_preset.png" />
-          <p>
-            If it doesn't appen just press <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd> and select
-            <code>CMake: Select Build Preset</code>
-          </p>
-          <img alt="Visual Studio Code user preset" class="img-fluid" src="/images/01_vscode_select_user_preset.png" >
-        </li>
-        <li>
-          <p>
-            Build and run from Visual Studio Code using the buttons on the bottom bar.
-          </p>
-          <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscode_bottom_bar.png" />
-          <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscode_run_image2ascii.png" />
-        </li>
       </ol>
+      
+      <h3>From the Visual Studio Code</h3>
+
+      <p>
+        After building the project from the terminal we can lunch Visual Studio code from command line
+        and the environment.
+      </p>
+
+      <pre class="pre-scrollable"><code>code .</code></pre>
+      <p>
+        At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
+      </p>
+      
+      <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscide_preset.png" />
+      <p>
+        If it doesn't appen just press <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd> and select
+        <code>CMake: Select Build Preset</code>
+      </p>
+      
+      <img alt="Visual Studio Code user preset" class="img-fluid" src="/images/01_vscode_select_user_preset.png" >
+      
+      <p>
+        Build and run from Visual Studio Code using the buttons on the bottom bar.
+      </p>
+      <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscode_bottom_bar.png" />
+      <img alt="Visual Studio Code presets" class="img-fluid" src="/images/01_vscode_run_image2ascii.png" />
+
+      <h3>From CLion</h3>
+      <p>
+        After building the project from the terminal we can lunch Visual Studio code from command line
+        and the environment.
+      </p>
+
+      <p>
+        <strong>
+          CLion doesn't support well Multi-Config project, we cannot should be careful which preset we
+          are choosing.
+        </strong>
+      </p>
+
+      <p>
+        Make sure CLion is in the path. For the instructions go to
+        <code>Tools / Create Command-Line Luncher...</code>
+      </p>
+
+      <img alt="CLion menu for command-line luncher" class="img-fluid" src="/images/01_clion_create_command_line_luncher.png" />
+
+      <p>
+        Follow the instructions on the screen:
+      </p>
+
+      <img alt="CLion luncher instructions" class="img-fluid" src="/images/01_clion_istruction_command_line_luncher.png" />
+
+      <p>
+        After starting CLion the following window will appear.
+      </p>
+
+      <img alt="CLion cmake preset" class="img-fluid" src="/images/01_clion_start_dialog.png" />
+
+      <p>
+        We need to remove the <code>Debug</code> using the <code>-</code> icon and enable
+        <code>conan-default - conan release</code> by selecting the profile and clickin on 
+        the <code>Enable profile</code> checkbox
+      </p>
+
+      <img alt="CLion cmake preset filled" class="img-fluid" src="/images/01_clion_start_dialog_filled.png" />
+
+      <p>
+        CLion will take a moment to load the project. When the project is fully loaded it's possible to
+        build and run the application throw the buttons on the top-right side of the window.
+      </p>
+
+      <img alt="CLion build toolbar" class="img-fluid" src="/images/01_clion_project_loaded.png" />
+
     </main>
 
     <footer class="pt-5 my-5 text-body-secondary border-top">
