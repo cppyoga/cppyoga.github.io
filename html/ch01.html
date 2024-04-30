@@ -196,7 +196,7 @@
           <p>
             The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
           </p>
-          <pre class="pre-scrollable"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
+          <pre><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
         </div>
 
         <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
@@ -284,7 +284,7 @@
           <p>
             Type the following command from the terminal:
           </p>
-          <pre class="pre-scrollable"><code>sudo apt install clang</code></pre>
+          <pre><code>sudo apt install clang</code></pre>
         </div>
       </div>
 
@@ -319,15 +319,15 @@
       <div class="tab-content" id="nav-git-content">
         <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
           role="tabpanel">
-          <pre class="pre-scrollable"><code>winget install --id Git.Git --source winget</code></pre>
+          <pre><code>winget install --id Git.Git --source winget</code></pre>
         </div>
 
         <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel" role="tabpanel">
-          <pre class="pre-scrollable"><code>brew install git</code></pre>
+          <pre><code>brew install git</code></pre>
         </div>
 
         <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel" role="tabpanel">
-          <pre class="pre-scrollable"><code>sudo apt install git</code></pre>
+          <pre><code>sudo apt install git</code></pre>
         </div>
       </div>
 
@@ -358,17 +358,17 @@
         <div class="tab-content" id="nav-conan-content">
           <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
             role="tabpanel">
-            <pre class="pre-scrollable"><code>winget install --id JFrog.Conan --source winget</code></pre>
+            <pre><code>winget install --id JFrog.Conan --source winget</code></pre>
           </div>
 
           <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
             role="tabpanel">
-            <pre class="pre-scrollable"><code>brew install conan</code></pre>
+            <pre><code>brew install conan</code></pre>
           </div>
 
           <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
             role="tabpanel">
-            <pre class="pre-scrollable"><code>sudo apt install conan</code></pre>
+            <pre><code>sudo apt install conan</code></pre>
           </div>
         </div>
 
@@ -436,18 +436,17 @@
       <div class="tab-content" id="nav-install-ide-content">
         <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
           id="nav-install-ide-windows-panel" role="tabpanel">
-          <pre
-            class="pre-scrollable"><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+          <pre><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
         </div>
 
         <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
           role="tabpanel">
-          <pre class="pre-scrollable"><code>brew install visual-studio-code</code></pre>
+          <pre><code>brew install visual-studio-code</code></pre>
         </div>
 
         <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
           role="tabpanel">
-          <pre class="pre-scrollable"><code>sudo snap install --classic code</code></pre>
+          <pre><code>sudo snap install --classic code</code></pre>
         </div>
       </div>
 
@@ -506,7 +505,7 @@
           <p>
             Clone the project and jump inside the cloned directory.
           </p>
-          <pre class="pre-scrollable"><code>git clone https://github.com/cppyoga/image2ascii.git
+          <pre><code>git clone https://github.com/cppyoga/image2ascii.git
 cd cppyoga-image2ascii            
           </code></pre>
         </li>
@@ -514,7 +513,7 @@ cd cppyoga-image2ascii
           <p>
             Buld the program from the command line:
           </p>
-          <pre class="pre-scrollable"><code>conan build . --profile cppyoga/default --build missing</code></pre>
+          <pre><code>conan build . --profile cppyoga/default --build missing</code></pre>
           <p>
             At this stage is not important understand the conan commands, this will be explained in the next lectures.
           </p>
@@ -523,7 +522,7 @@ cd cppyoga-image2ascii
           <p>
             Lunch the application:
           </p>
-          <pre class="pre-scrollable"><code>./build/Release/image2ascii</code></pre>
+          <pre><code>./build/Release/image2ascii</code></pre>
           <p>
             After lunching the application, the default image will be download and converted to ASCII art!
           </p>
@@ -538,7 +537,7 @@ cd cppyoga-image2ascii
         and the environment.
       </p>
 
-      <pre class="pre-scrollable"><code>code .</code></pre>
+      <pre><code>code .</code></pre>
       <p>
         At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
       </p>
