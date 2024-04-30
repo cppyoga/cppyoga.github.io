@@ -75,8 +75,8 @@
     display: block !important;
   }
   
-  pre + code {
+  pre code {
     fill: currentColor;
-    border: 1px solid black;
-    padding: 10px;
+    border: 2px solid black;
+    padding-bottom: 1rem;
   }
