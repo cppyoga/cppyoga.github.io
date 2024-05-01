@@ -146,6 +146,7 @@
 
     <p>
       The program is a slightly modification of the <a
+        target="_blank"
         href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">blog.conan.io</a>
       blog post.
     </p>
@@ -241,14 +242,22 @@ winget install --id Microsoft.WindowsTerminal --source winget
     </p>
 
     <p>
-      There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular. These
-      compilers are very different from each other, and learning singularly all of them takes a lot of time and effort.
-      To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
+      There are many different compilers available today.
+      <a target="_blank" href="https://visualstudio.microsoft.com/vs/features/cplusplus/">MSVC</a>,
+      <a target="_blank" href="https://gcc.gnu.org">GCC</a>,
+      <a target="_blank" href="https://www.mingw-w64.org">MinGW</a>,
+      <a target="_blank" href="https://clang.llvm.org">Clang</a>, and
+      <a target="_blank"
+         href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html">Intel</a>
+      are the most popular. These compilers are very different from each other, and learning singularly all of them
+      takes a lot of time and effort. To our rescue, some build tools abstract the specific compiler and allow us to
+      switch between them easily.
     </p>
 
     <p>
-      A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
-      for formatting the code, static analysis, and compilers.
+      A particular note about Clang: clang is part of a more extensive framework called LLVM.
+      <a target="_blank" href="https://llvm.org">LLVM</a> provides many tools for formatting the code, static analysis,
+      and compilers.
     </p>
 
     <h3>How to install the C++ toolchain</h3>
@@ -322,7 +331,7 @@ sudo apt install clang
 
     <p>
       All the source code will be available from the
-      <a href="https://github.com/cppyoga">cppyoga GutHub</a>, also this website.
+      <a href="https://github.com/cppyoga" target="_blank">cppyoga GutHub</a>, also this website.
     </p>
 
     <nav>
@@ -366,9 +375,13 @@ sudo apt install git
     <div>
       <h2 class="text-body-emphasis">Conan</h2>
       <p>
-        Conan is a C++ package manager. A quick tutorial can be found in <a
-          href="https://docs.conan.io/2/tutorial.html">conan.io</a>
-        website.
+        Conan is a C++ package manager. A quick tutorial can be found in
+        <a target="_blank" href="https://docs.conan.io/2/tutorial.html">conan.io</a> website.
+      </p>
+
+      <p>
+        Conan is coming with an extensive documentation, if you want to go more in-depth about conan please read the
+        <a target="_blank" href="https://docs.conan.io/2/tutorial.html">tutorial</a> section in the documentation.
       </p>
 
       <nav>
@@ -441,18 +454,21 @@ conan config install --type git https://github.com/cppyoga/cppyoga-conan-config.
 
     <ul>
       <li>
-        <a href="https://visualstudio.microsoft.com">Visual Studio</a>: it's working only on Windows and is the most
-        used IDE on this platform. The community edition (CE) is out of charge for students and small companies.
+        <a href="https://visualstudio.microsoft.com" target="_blank">Visual Studio</a>: it's working only on Windows
+        and is the most used IDE on this platform. The community edition (CE) is out of charge for students and small
+        companies.
       </li>
       <li>
-        <a href="https://www.jetbrains.com/clion/promo/?msclkid=f7483f5942d11c8363b45969985abf34&utm_source=bing&utm_medium=cpc&utm_campaign=EMEA_en_WEST_Clion_Branded&utm_term=clion&utm_content=clion">
+        <a
+            target="_blank"
+            href="https://www.jetbrains.com/clion/promo/?msclkid=f7483f5942d11c8363b45969985abf34&utm_source=bing&utm_medium=cpc&utm_campaign=EMEA_en_WEST_Clion_Branded&utm_term=clion&utm_content=clion">
           CLion
         </a>: it works very well on Windows, Linux and macOS. It's one of the best IDEs for C++ and is out of charge for
         students. This is also my favourite IDE.
       </li>
       <li>
-        <a href="https://code.visualstudio.com">Visual Studio Code</a>: it works on Windows, Linux and macOS. I honestly
-        find hard to work with C++, but it's free.
+        <a target="_blank" href="https://code.visualstudio.com">Visual Studio Code</a>: it works on Windows, Linux and
+        macOS. I honestly find hard to work with C++, but it's free.
       </li>
     </ul>
 
@@ -505,16 +521,18 @@ sudo snap install --classic code
 
     <h3>Setting up Visual Studio Code</h3>
     <p>
-      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press<kbd><kbd>Alt</kbd>+
-      <kbd>Shift</kbd> + <kbd>P</kbd></kbd>or (<kbd><kbd>&#8984;</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd>) and type
+      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press <kbd><kbd>Alt</kbd>+
+      <kbd>Shift</kbd> + <kbd>P</kbd></kbd> or <kbd><kbd>&#8984;</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd> and
+      type
       “Shell Command: install 'code' command in PATH“
     </p>
 
     <img alt="Visual Studio setting" class="img-fluid" src="/assets/images/01_ide_code_on_path.webp"/>
 
     <p>
-      The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or &#8984;+⇧+P
-      and the extension's name. The following extensions are required:
+      The next step is to install all the recommended C++ extensions. To install an extension, type
+      <kbd><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd></kbd> or <kbd><kbd>&#8984;</kbd> + <kbd>Shift</kbd> +
+      <kbd>P</kbd></kbd> and the extension's name. The following extensions are required:
     </p>
 
     <ul>
@@ -569,6 +587,19 @@ conan build . --profile cppyoga/default --build missing
         <p>
           At this stage is not important understand the conan commands, this will be explained in the next lectures.
         </p>
+        <p>
+          This command is building the package using the <code>cppyoga/default</code> profile previously installed with
+          <code>conan config install</code>. <code>--build missing</code> is telling conan to build the third party
+          dependencies if they are not present in the local cache.
+        </p>
+        <p>
+          The following is the graph of all the required dependencies
+        </p>
+        <img
+            alt="Dependency graph for image2ascii"
+            src="/assets/images/graph.png"
+            width="100%"
+        >
       </li>
       <li>
         <p>
