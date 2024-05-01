@@ -11,162 +11,194 @@
   <meta content="Elvis Dukaj" name="author">
   <meta content="C++, programmimg, learn C+*, Conan, CMake, CLion, Visual Studio Code, vscode" name="keywords">
   <meta name="description"
-    content="Master C++ programming with C++ Yoga. Interactive tutorials, exercises, and expert tips to elevate your coding skills.">
+        content="Master C++ programming with C++ Yoga. Interactive tutorials, exercises, and expert tips to elevate your coding skills.">
   <meta name="robots" content="index, follow">
 
   <link href="https://getbootstrap.com/docs/5.3/examples/starter-template/" rel="canonical">
+  <!--suppress JSUnresolvedLibraryURL -->
   <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
   <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--suppress JSUnresolvedLibraryURL -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link href="/assets/styles/cppyoga.css" rel="stylesheet" />
+  <link href="/assets/styles/cppyoga.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button aria-expanded="false" aria-label="Toggle theme (auto)"
-      class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" id="bd-theme"
-      type="button">
-      <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
-        <use href="/assets/icons/icons.svg#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button aria-expanded="false" aria-label="Toggle theme (auto)"
+          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
+          id="bd-theme"
           type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
+    <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
+      <use href="/assets/icons/icons.svg#circle-half"></use>
+    </svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#sun-fill"></use>
+        </svg>
+        Light
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
+        </svg>
+        Dark
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#circle-half"></use>
+        </svg>
+        Auto
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
 
-  <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/index.html">
-          <svg class="bi me-2" height="32" width="40">
-            <use xlink:href="/assets/images/logo.svg#logo" />
-          </svg>
-          <span class="fs-4">C++ Yoga</span>
-        </a>
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/index.html">
+        <svg class="bi me-2" height="32" width="40">
+          <use xlink:href="/assets/images/logo.svg#logo"/>
+        </svg>
+        <span class="fs-4">C++ Yoga</span>
+      </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
-          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+              aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">About me</a>
+          </li>
+          <!--
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page">About me</a>
-            </li>            
-            <!--
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/html/table-of-content.html" data-bs-toggle="dropdown"
-                aria-expanded="false">Table of content</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/html/ch01.html">Chapter 01</a></li>
-                <li><a class="dropdown-item" href="#">Chapter 02</a></li>
-              </ul>
-            </li>
-          </ul>
+              <a class="nav-link" href="#">Link</a>
+          </li>
+          -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/html/table-of-content.html" data-bs-toggle="dropdown"
+               aria-expanded="false">Table of content</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/html/ch01.html">Chapter 01</a></li>
+              <li><a class="dropdown-item" href="#">Chapter 02</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1 class="text-body-emphasis">About me</h1>
+    <hr class="col-12 mb-5">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <svg class="bi col-12">
+            <use href="/assets/images/logo.svg#logo"></use>
+          </svg>
+        </div>
+        <div class="col">
+          <p>
+            I am a passionate C++ Software engineer, with particular focus in
+            XR, Game Programming and embedded systetem.
+          </p>
         </div>
       </div>
-    </nav>
 
-    <div class="container">
-      <main>
-        <h1 class="text-body-emphasis">About me</h1>
-        <hr class="col-12 mb-5">
+      <hr class="col-12">
 
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col">
-              <svg class="bi col-12">
-                <use href="/assets/images/logo.svg#logo"></use>
-              </svg>
-            </div>
-            <div class="col">          
-            <p>
-              I am a passionate C++ Software engineer, with particular focus in
-              XR, Game Programming and embedded systetem.
-            </p>
+      <div class="container">
+        <h2 class="text-body-emphasis">Contact me</h2>
+        <div class="row">
+          <div class="col-2">
+            <svg class="bi me-2" height="1em" width="1em">
+              <use href="/assets/icons/icons.svg#linkedin"></use>
+            </svg>
+          </div>
+          <div class="col">
+            <a href="https://www.linkedin.com/in/elvis-dukaj/">Linkedin</a>
           </div>
         </div>
-
-        <hr class="col-12">
-
-        <div class="container">
-          <h2 class="text-body-emphasis">Contact me</h2>
-          <div class="row">
-            <div class="col-2">
-              <svg class="bi me-2" height="1em" width="1em">
-                <use href="/assets/icons/icons.svg#linkedin"></use>
-              </svg>
-            </div>
-            <div class="col">
-              <a href="https://www.linkedin.com/in/elvis-dukaj/">Linkedin</a>
-            </div>
+        <div class="row">
+          <div class="col-2">
+            <svg class="bi me-2" height="1em" width="1em">
+              <use href="/assets/icons/icons.svg#envelop-at-fill"></use>
+            </svg>
           </div>
-          <div class="row">
-            <div class="col-2">
-              <svg class="bi me-2" height="1em" width="1em">
-                <use href="/assets/icons/icons.svg#envelop-at-fill"></use>
-              </svg>
-            </div>
-            <div class="col">
-              <a href="mailto:elvis.dukaj@gmail.com">elvis.dukaj@gmail.com</a>
-            </div>
+          <div class="col">
+            <a href="mailto:elvis.dukaj@gmail.com">elvis.dukaj@gmail.com</a>
           </div>
         </div>
-      </main>
+      </div>
     </div>
 
-    <footer class="pt-5 my-5 text-body-secondary border-top">
-      Elvis Dukaj &copy; 2024
-    </footer>
-  </div>
+    <div class="container">
+      <hr class="col-12 mb-5">
+      <h1 class="text-body-emphasis">I need your help!</h1>
+      <p>
+        Did you notice? This website is free from all the bloated advertising and annoying alert messages popping up
+        all the time! I want this to be a pleasant experience everybody can enjoy without distractions.
+      </p>
+      <p>
+        This requires a lot of energy and efforts from my free time, if you like the content of this website and you
+        want to support me buy me a coffee! Your supports helps to keep this homepage updated with new content.
+      </p>
 
-  <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="row align-items-center">
+        <div class="col">
+          <a href="https://www.buymeacoffee.com/elvisdukaj">
+            <img
+                alt="Buy me a coffee"
+                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=elvisdukaj&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"/></a>
+        </div>
+        <div class="col">
+          <!--suppress CheckImageSize -->
+          <img
+              src="/assets/images/bmc_qr.png"
+              width="100%"
+              alt="By me a coffee QR code"
+          />
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<footer class="pt-5 my-5 text-body-secondary border-top">
+  Elvis Dukaj &copy; 2024
+</footer>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
