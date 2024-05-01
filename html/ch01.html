@@ -567,53 +567,45 @@ sudo snap install --classic code
 
     <h3>From the terminal</h3>
 
-    <ol>
-      <li>
-        <p>
-          Clone the project and jump inside the cloned directory.
-        </p>
-        <pre><code>
+    <p>
+      Clone the project and jump inside the cloned directory.
+    </p>
+    <pre><code>
 git clone https://github.com/cppyoga/image2ascii.git
 cd cppyoga-image2ascii
         </code></pre>
-      </li>
-      <li>
-        <p>
-          Build the program from the command line:
-        </p>
-        <pre><code>
+    <p>
+      Build the program from the command line:
+    </p>
+    <pre><code>
 conan build . --profile cppyoga/default --build missing
         </code></pre>
-        <p>
-          At this stage is not important understand the conan commands, this will be explained in the next lectures.
-        </p>
-        <p>
-          This command is building the package using the <code>cppyoga/default</code> profile previously installed with
-          <code>conan config install</code>. <code>--build missing</code> is telling conan to build the third party
-          dependencies if they are not present in the local cache.
-        </p>
-        <p>
-          The following is the graph of all the required dependencies
-        </p>
-        <img
-            alt="Dependency graph for image2ascii"
-            src="/assets/images/graph.png"
-            width="100%"
-        >
-      </li>
-      <li>
-        <p>
-          Lunch the application:
-        </p>
-        <pre><code>
+    <p>
+      At this stage is not important understand the conan commands, this will be explained in the next lectures.
+    </p>
+    <p>
+      This command is building the package using the <code>cppyoga/default</code> profile previously installed with
+      <code>conan config install</code>. <code>--build missing</code> is telling conan to build the third party
+      dependencies if they are not present in the local cache.
+    </p>
+    <p>
+      The following is the graph of all the required dependencies
+    </p>
+    <img
+        alt="Dependency graph for image2ascii"
+        src="/assets/images/graph.png"
+        width="100%"
+    >
+    <p>
+      Lunch the application:
+    </p>
+    <pre><code>
 ./build/Release/image2ascii
         </code></pre>
-        <p>
-          After lunching the application, the default image will be downloaded and converted to ASCII art!
-        </p>
-        <img alt="Output of the image2ascii" class="img-fluid" src="/assets/images/01_image2ascii_output.png">
-      </li>
-    </ol>
+    <p>
+      After lunching the application, the default image will be downloaded and converted to ASCII art!
+    </p>
+    <img alt="Output of the image2ascii" class="img-fluid" src="/assets/images/01_image2ascii_output.png">
 
     <h3>From the Visual Studio Code</h3>
 
