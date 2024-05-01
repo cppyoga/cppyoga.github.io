@@ -9,226 +9,211 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Elvis Dukaj" name="author">
   <meta content="C++, programmimg, learn C+*, Conan, CMake, CLion, Visual Studio Code, vscode" name="keywords">
-  <meta name="description"
-    content="Master C++ programming with C++ Yoga. Interactive tutorials, exercises, and expert tips to elevate your coding skills.">
-  <meta name="robots" content="index, follow">
+  <meta
+      content="Master C++ programming with C++ Yoga. Interactive tutorials, exercises, and expert tips to elevate your coding skills."
+      name="description">
+  <meta content="index, follow" name="robots">
 
   <link href="https://getbootstrap.com/docs/5.3/examples/starter-template/" rel="canonical">
   <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
   <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <link href="/assets/styles/cppyoga.css" rel="stylesheet" />
+  <link href="/assets/styles/cppyoga.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button aria-expanded="false" aria-label="Toggle theme (auto)"
-      class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" id="bd-theme"
-      type="button">
-      <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
-        <use href="/assets/icons/brightness-high-fill.svg#sun-fill"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button aria-expanded="false" aria-label="Toggle theme (auto)"
+          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
+          id="bd-theme"
           type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
+    <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
+      <use href="/assets/icons/brightness-high-fill.svg#sun-fill"></use>
+    </svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#sun-fill"></use>
+        </svg>
+        Light
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
+        </svg>
+        Dark
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#circle-half"></use>
+        </svg>
+        Auto
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
 
-  <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/">
-          <svg class="bi me-2" height="32" width="40">
-            <use xlink:href="/assets/images/logo.svg#logo" />
-          </svg>
-          <span class="fs-4">C++ Yoga</span>
-        </a>
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <nav aria-label="Third navbar example" class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/">
+        <svg class="bi me-2" height="32" width="40">
+          <use xlink:href="/assets/images/logo.svg#logo"/>
+        </svg>
+        <span class="fs-4">C++ Yoga</span>
+      </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
-          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler"
+              data-bs-target="#navbarsExample03" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/html/contacts.html">About me</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/html/table-of-content.html" data-bs-toggle="dropdown"
-                aria-expanded="false">Table of content</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/html/ch01.html">Chapter 01</a></li>
-                <li><a class="dropdown-item" href="#">Chapter 02</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contacts.html">About me</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+               href="/html/table-of-content.html">Table of content</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/html/ch01.html">Chapter 01</a></li>
+              <li><a class="dropdown-item" href="#">Chapter 02</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
-      <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom">Why C++ Yoga</h2>
+  <main>
+    <div class="container px-4 py-5" id="icon-grid">
+      <h2 class="pb-2 border-bottom">Why C++ Yoga</h2>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
-              <use xlink:href="/assets/icons/icons.svg#piggy-bank" />
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Free</h3>
-              <p>knowledge should be shared for free!</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
-              <use xlink:href="/assets/icons/icons.svg#speedometer2" />
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Performant code</h3>
-              <p>C++ is known for it's speed, let's write performant code!</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
-              <use xlink:href="/assets/icons/icons.svg#toggles2" />
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">C++ 20/23/26</h3>
-              <p>Only modern C++ code will be used. The minimum required version of C++ is C++20.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
-              <use xlink:href="/assets/icons/icons.svg#geo-fill" />
-            </svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Going to the point</h3>
-              <p>Only relevant themes will be covered to be productive with C++.</p>
-            </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" height="1.75em" width="1.75em">
+            <use xlink:href="/assets/icons/icons.svg#piggy-bank"/>
+          </svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Free</h3>
+            <p>knowledge should be shared for free!</p>
           </div>
         </div>
-        <!-- </div> -->
-
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="text-body-emphasis">Introduction</h1>
-            <p>
-              This website aims to share my experience and bring you on a wonderful journey with C++. Learning a
-              programming
-              language is useless if not applied to real and concrete projects. I believe that it is much more important
-              to
-              be able to write professional programs that solve a particular problem than to have a deep knowledge of
-              the
-              programming language from the beginning.
-            </p>
-            <p>
-              Learning a language doesn't make you a poet like learning a programming language won't make you a software
-              developer.
-            </p>
-
-            <p>
-              One of the core values of this course is that it focuses on professional and practical applications. Most
-              of
-              the courses start straight away on the language, forgetting how to structure a project, how to include
-              dependencies and ultimately, how to write useful applications.
-            </p>
-
-            <p>
-              This blog aims to fills this gape and make you comfortable with C++, learning only the best practices
-              using
-              clean code and the best methodologies. In this journey you'll write useful applications and engaging games
-              that can be executed on Windows, MacOS, Linux and Android ( maybe on iOS a iPadOS).
-            </p>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" height="1.75em" width="1.75em">
+            <use xlink:href="/assets/icons/icons.svg#speedometer2"/>
+          </svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Performant code</h3>
+            <p>C++ is known for it's speed, let's write performant code!</p>
           </div>
-
-          <hr class="col-12 mb-5">
         </div>
-
-        <div class="row mb-2">
-          <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow h-md-250">
-              <div class="card-body d-flex flex-column align-items-start">
-                <div class="mb-1 text-muted">Chapter 01</div>
-                <p class="card-text mb-auto">Setting the development environment.</p>
-                <a href="/html/ch01.html">Continue reading</a>
-              </div>
-              <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-                alt="Setting the development environment" src="/assets/images/01_asciidoc_transformation_400x500.png"
-                data-holder-rendered="true" style="width: 200px; height: 250px;">
-            </div>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" height="1.75em" width="1.75em">
+            <use xlink:href="/assets/icons/icons.svg#toggles2"/>
+          </svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">C++ 20/23/26</h3>
+            <p>Only modern C++ code will be used. The minimum required version of C++ is C++20.</p>
           </div>
-
-
-          <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow h-md-250">
-              <div class="card-body d-flex flex-column align-items-start">
-                <div class="mb-1 text-muted">Chapter 02</div>
-                <p class="card-text mb-auto">Hello World</p>
-                <a href="/html/ch01.html">Continue reading</a>
-              </div>
-              <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-                alt="Setting the development environment" src="/assets/images/01_asciidoc_transformation_400x500.png"
-                data-holder-rendered="true" style="width: 200px; height: 250px;">
-            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <svg class="bi text-body-secondary flex-shrink-0 me-3" height="1.75em" width="1.75em">
+            <use xlink:href="/assets/icons/icons.svg#geo-fill"/>
+          </svg>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Going to the point</h3>
+            <p>Only relevant themes will be covered to be productive with C++.</p>
           </div>
         </div>
       </div>
-    </main>
+      <!-- </div> -->
 
-    <footer class="pt-5 my-5 text-body-secondary border-top">
-      Elvis Dukaj &copy; 2024
-    </footer>
-  </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-body-emphasis">Introduction</h1>
+          <p>
+            This website aims to share my experience and bring you on a wonderful journey with C++. Learning a
+            programming language is useless if not applied to real and concrete projects. I believe that it is much more
+            important to be able to write professional programs that solve a particular problem than to have a deep
+            knowledge of the programming language from the beginning.
+          </p>
+          <p>
+            Like learning a language and the grammar doesn't make you a poet, learning a programming language won't make
+            you a software developer. There is much more to learn. It's important don't get overwhelmed! C++ in
+            particular] is having a lot of legacy and it's not easy to find the right resources online.
+          </p>
 
-  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+          <p>
+            One of the core values of this course is that it focuses on professional and practical applications. Most of
+            the courses start straight away on the language, forgetting how to structure a project, how to include
+            dependencies and ultimately, how to write useful applications.
+          </p>
+
+          <p>
+            This blog aims to fills this gape and make you comfortable with C++, learning only the best practices
+            using clean code and the best methodologies. In this journey you'll write useful applications and engaging
+            games that can be executed on Windows, macOS, Linux and Android (maybe on iPhone and iPad as well!).
+          </p>
+        </div>
+
+        <hr class="col-12 mb-5">
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <div class="mb-1 text-muted">Chapter 01</div>
+              <p class="card-text mb-auto">Setting the development environment.</p>
+              <a href="/html/ch01.html">Continue reading</a>
+            </div>
+            <img alt="Setting the development environment" class="card-img-right flex-auto d-none d-md-block"
+                 data-holder-rendered="true" data-src="holder.js/200x250?theme=thumb"
+                 src="/assets/images/01_asciidoc_transformation_400x500.png" style="width: 200px; height: 250px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pt-5 my-5 text-body-secondary border-top">
+    Elvis Dukaj &copy; 2024
+  </footer>
+</div>
+
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
