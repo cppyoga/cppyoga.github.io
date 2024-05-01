@@ -6,616 +6,628 @@
 
   <script src="/assets/js/color-modes.js"></script>
 
-  <meta content="Elvis Dukaj" name="author" />
+  <meta content="Elvis Dukaj" name="author"/>
   <meta content="Setting up correctly the development environment is a crucial factor for a successful software developer.
-    We will learn how to create an easy but still professional environment" name="description" />
+    We will learn how to create an easy but still professional environment" name="description"/>
 
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
   <!-- Bootstrap CSS -->
   <link href="https://getbootstrap.com/docs/5.3/examples/starter-template/" rel="canonical">
   <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
   <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="/assets/styles/cppyoga.css" rel="stylesheet" />
+  <link href="/assets/styles/cppyoga.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button aria-expanded="false" aria-label="Toggle theme (auto)"
-      class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" id="bd-theme"
-      type="button">
-      <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
-        <use href="/assets/icons/icons.svg#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button aria-expanded="false" aria-label="Toggle theme (auto)"
+          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
+          id="bd-theme"
           type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          type="button">
-          <svg class="bi me-2 opacity-50" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" height="1em" width="1em">
-            <use href="/assets/icons/icons.svg#check2"></use>
-          </svg>
-        </button>
-      </li>
+    <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
+      <use href="/assets/icons/icons.svg#circle-half"></use>
+    </svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#sun-fill"></use>
+        </svg>
+        Light
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
+        </svg>
+        Dark
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+              type="button">
+        <svg class="bi me-2 opacity-50" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#circle-half"></use>
+        </svg>
+        Auto
+        <svg class="bi ms-auto d-none" height="1em" width="1em">
+          <use href="/assets/icons/icons.svg#check2"></use>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div class="col-lg-8 mx-auto p-4 py-md-5">
+  <nav aria-label="Third navbar example" class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/index.html">
+        <svg class="bi me-2" height="32" width="40">
+          <use xlink:href="/assets/images/logo.svg#logo"/>
+        </svg>
+        <span class="fs-4">C++ Yoga</span>
+      </a>
+
+      <button aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler"
+              data-bs-target="#navbarsExample03" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contacts.html">About me</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
+               href="/html/table-of-content.html">Table of content</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item disabled" href="/html/ch01.html">Chapter 01</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <h1 class="text-body-emphasis">Setting up the C++ environment</h1>
+
+    <hr class="col-12 mb-5">
+
+    <h2 class="text-body-emphasis">Objectives</h2>
+    <p class="fs-5 col-md-8">
+      Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and
+      Linux.
+    <ul>
+      <li>How to install the C++ compiler on Windows, macOS and Linux.</li>
+      <li>How to install Conan, the C++ package manager.</li>
+      <li>How to install the IDE.</li>
+      <li>How to build and run our first application.</li>
     </ul>
-  </div>
 
-  <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/index.html">
-          <svg class="bi me-2" height="32" width="40">
-            <use xlink:href="/assets/images/logo.svg#logo" />
-          </svg>
-          <span class="fs-4">C++ Yoga</span>
-        </a>
+    <h2 class="text-body-emphasis">What we will learn</h2>
+    <p>
+      After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download
+      a
+      picture from an url, and it will convert it in a coloured ascii art.
+      We will be able to download and compile all the required dependencies, build and run the program and make small
+      changes to it.
+    </p>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
-          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <p>
+      The program is a slightly modification of the <a
+        href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">blog.conan.io</a>
+      blog post.
+    </p>
+
+    <img alt="preview" class="img-fluid" src="/assets/images/01_asciidoc_transformation.png">
+
+    <h2 class="text-body-emphasis">Introduction</h2>
+    <p>
+      There are several factors to consider when setting up the environment:
+    </p>
+
+    <ol>
+      <li>It should be self-contained and reproducible</li>
+      <li>It should be tool-friendly</li>
+    </ol>
+
+    <p>
+      A self-contained working environment makes collaboration with other people much more straightforward and makes
+      setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
+      honestly think this is overkill. A working environment should require the bare minimum dependencies from the
+      system and nothing more.
+    </p>
+
+    <p>
+      The environment should be able to build our project and simply the development process. Tools like auto
+      competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for
+      our
+      workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
+      Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
+    </p>
+
+    <h2 class="text-body-emphasis">Terminal</h2>
+    <nav>
+      <div class="nav nav-tabs" id="nav-terminal-tab" role="tablist">
+        <button aria-controls="nav-terminal-windows" aria-selected="true" class="nav-link active"
+                data-bs-target="#nav-terminal-windows-panel" data-bs-toggle="tab" id="nav-terminal-window-tab"
+                role="tab"
+                type="button">Windows
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-          <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/html/contacts.html">About me</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="/html/table-of-content.html" data-bs-toggle="dropdown"
-                aria-expanded="false">Table of content</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item disabled" href="/html/ch01.html">Chapter 01</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <button aria-controls="nav-terminal-macos" aria-selected="true" class="nav-link"
+                data-bs-target="#nav-terminal-macos-panel" data-bs-toggle="tab" id="nav-terminal-macos-tab" role="tab"
+                type="button">MacOS
+        </button>
+        <button aria-controls="nav-terminal-macos" aria-selected="false" class="nav-link"
+                data-bs-target="#nav-terminal-linux-panel" data-bs-toggle="tab" id="nav-terminal-linux-tab" role="tab"
+                type="button">Linux
+        </button>
       </div>
     </nav>
-
-    <main>
-      <h1 class="text-body-emphasis">Setting up the C++ environment</h1>
-
-      <hr class="col-12 mb-5">
-
-      <h2 class="text-body-emphasis">Objectives</h2>
-      <p class="fs-5 col-md-8">
-        Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and
-        Linux.
-      <ul>
-        <li>How to install the C++ compiler on Windows, macOS and Linux.</li>
-        <li>How to install Conan, the C++ package manager.</li>
-        <li>How to install the IDE.</li>
-        <li>How to build and run our first application.</li>
-      </ul>
-
-      <h2 class="text-body-emphasis">What we will learn</h2>
-      <p>
-        After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download
-        a
-        picture from an url, and it will convert it in a coloured ascii art.
-        We will be able to download and compile all the required dependencies, build and run the program and make small
-        changes to it.
-      </p>
-
-      <p>
-        The program is a slightly modification of the <a
-          href="https://blog.conan.io/2024/03/21/Introducing-new-conan-visual-studio-extension.html">blog.conan.io</a>
-        blog post.
-      </p>
-
-      <img alt="preview" class="img-fluid" src="/assets/images/01_asciidoc_transformation.png">
-
-      <h2 class="text-body-emphasis">Introduction</h2>
-      <p>
-        There are several factors to consider when setting up the environment:
-      </p>
-
-      <ol>
-        <li>It should be self-contained and reproducible</li>
-        <li>It should be tool-friendly</li>
-      </ol>
-
-      <p>
-        A self-contained working environment makes collaboration with other people much more straightforward and makes
-        setting up the CI/CD much quicker. Many companies opt to use docker for setting the working environment. I
-        honestly think this is overkill. A working environment should require the bare minimum dependencies from the
-        system and nothing more.
-      </p>
-
-      <p>
-        The environment should be able to build our project and simply the development process. Tools like auto
-        competition, code navigation, code refactoring, code formatting, and static-analyser should be a must-have for
-        our
-        workflow. Setting up an IDE should be a high priority as it can affect our process. In this course, I will use
-        Visual Studio Code as IDE. It's not my favourite, but it's free, cross-platform and customisable.
-      </p>
-
-      <h2 class="text-body-emphasis">Terminal</h2>
-      <nav>
-        <div class="nav nav-tabs" id="nav-terminal-tab" role="tablist">
-          <button aria-controls="nav-terminal-windows" aria-selected="true" class="nav-link active"
-            data-bs-target="#nav-terminal-windows-panel" data-bs-toggle="tab" id="nav-terminal-window-tab" role="tab"
-            type="button">Windows
-          </button>
-          <button aria-controls="nav-terminal-macos" aria-selected="true" class="nav-link"
-            data-bs-target="#nav-terminal-macos-panel" data-bs-toggle="tab" id="nav-terminal-macos-tab" role="tab"
-            type="button">MacOS
-          </button>
-          <button aria-controls="nav-terminal-macos" aria-selected="false" class="nav-link"
-            data-bs-target="#nav-terminal-linux-panel" data-bs-toggle="tab" id="nav-terminal-linux-tab" role="tab"
-            type="button">Linux
-          </button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-terminal-content">
-        <div aria-labelledby="nav-terminal-window-tab" class="tab-pane fade show active" id="nav-terminal-windows-panel"
-          role="tabpanel">
-          <p>
-            I highly recommend installing winget on Windows as it will simplify download packages.
-          </p>
-          <p>
-            The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
-          </p>
-          <pre class="srccode"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
-        </div>
-
-        <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
-          role="tabpanel">
-          <p>
-            On macOS, I suggest to install iTerm2.
-          </p>
-          <p>
-            I suggest to install also Homebrew as a package manager.
-          </p>
-        </div>
-
-        <div aria-labelledby="nav-terminal-linux-tab" class="tab-pane fade show" id="nav-terminal-linux-panel"
-          role="tabpanel">
-          <p>
-            Nothing to do on Linux :) .
-          </p>
-        </div>
-      </div>
-
-      <h2 class="text-body-emphasis">C++ Toolchain</h2>
-      <p>
-        The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in
-        the
-        target machine.
-      </p>
-
-      <p>
-        There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular.
-        These
-        compilers are very different from each other, and learning singularly all of them takes a lot of time and
-        effort.
-        To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
-      </p>
-
-      <p>
-        A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
-        for formatting the code, static analysis, and compilers.
-      </p>
-
-      <h3>How to install the C++ toolchain</h3>
-      <nav>
-        <div class="nav nav-tabs" id="nav-toolchain-tab" role="tablist">
-          <button aria-controls="nav-toolchain-windows" aria-selected="true" class="nav-link active"
-            data-bs-target="#nav-toolchain-windows-panel" data-bs-toggle="tab" id="nav-toolchain-window-tab" role="tab"
-            type="button">Windows
-          </button>
-          <button aria-controls="nav-toolchain-macos" aria-selected="true" class="nav-link"
-            data-bs-target="#nav-toolchain-macos-panel" data-bs-toggle="tab" id="nav-toolchain-macos-tab" role="tab"
-            type="button">MacOS
-          </button>
-          <button aria-controls="nav-toolchain-linux" aria-selected="false" class="nav-link"
-            data-bs-target="#nav-toolchain-linux-panel" data-bs-toggle="tab" id="nav-toolchain-linux-tab" role="tab"
-            type="button">Linux
-          </button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-toolchain-content">
-        <div aria-labelledby="nav-toolchain-window-tab" class="tab-pane fade show active"
-          id="nav-toolchain-windows-panel" role="tabpanel">
-          <p>
-            On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
-            download Visual Studio Community for free.
-          </p>
-          <p>
-            There are two options to install it: via winget or downloading it from the browser. Using winget from the
-            Windows Terminal:
-          </p>
-          <pre class="srccode"><code>winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code></pre>
-        </div>
-
-        <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
-          role="tabpanel">
-          <p>
-            Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
-          </p>
-          <pre class="srccode"><code>xcode-select --install</code></pre>
-        </div>
-        <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
-          role="tabpanel">
-          <p>
-            On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
-            messages than GCC, and it's easier for beginners to understand the issues.
-          </p>
-          <p>
-            Type the following command from the terminal:
-          </p>
-          <pre class="srccode"><code>sudo apt install clang</code></pre>
-        </div>
-      </div>
-
-      <h2 class="text-body-emphasis">Install Git</h2>
-      <p>
-        Git is a software control version. No knowledge of git will be required during this course.
-        The only conan we will use is <code>clone</code>, that will download the project locally
-        from GitHub.
-      </p>
-      
-      <p>
-        All the source code will be available from the
-        <a href="https://github.com/cppyoga">cppyoga GutHub</a>, also this website.
-      </p>
-      
-      <nav>
-        <div class="nav nav-tabs" id="nav-git-tab" role="tablist">
-          <button aria-controls="nav-git-windows" aria-selected="true" class="nav-link active"
-            data-bs-target="#nav-git-windows-panel" data-bs-toggle="tab" id="nav-git-window-tab" role="tab"
-            type="button">Windows
-          </button>
-          <button aria-controls="nav-git-macos" aria-selected="true" class="nav-link"
-            data-bs-target="#nav-git-macos-panel" data-bs-toggle="tab" id="nav-git-macos-tab" role="tab"
-            type="button">MacOS
-          </button>
-          <button aria-controls="nav-git-linux" aria-selected="false" class="nav-link"
-            data-bs-target="#nav-git-linux-panel" data-bs-toggle="tab" id="nav-git-linux-tab" role="tab"
-            type="button">Linux
-          </button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-git-content">
-        <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
-          role="tabpanel">
-          <pre class="srccode"><code>winget install --id Git.Git --source winget</code></pre>
-        </div>
-
-        <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel" role="tabpanel">
-          <pre class="srccode"><code>brew install git</code></pre>
-        </div>
-
-        <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel" role="tabpanel">
-          <pre class="srccode"><code>sudo apt install git</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h2 class="text-body-emphasis">Conan</h2>
+    <div class="tab-content" id="nav-terminal-content">
+      <div aria-labelledby="nav-terminal-window-tab" class="tab-pane fade show active" id="nav-terminal-windows-panel"
+           role="tabpanel">
         <p>
-          Conan is a C++ package manager. A quick tutorial can be found in <a
-            href="https://docs.conan.io/2/tutorial.html">conan.io</a>
-          website.
+          I highly recommend installing winget on Windows as it will simplify download packages.
         </p>
-
-        <nav>
-          <div class="nav nav-tabs" id="nav-conan-tab" role="tablist">
-            <button aria-controls="nav-conan-windows" aria-selected="true" class="nav-link active"
-              data-bs-target="#nav-conan-windows-panel" data-bs-toggle="tab" id="nav-conan-window-tab" role="tab"
-              type="button">Windows
-            </button>
-            <button aria-controls="nav-conan-macos" aria-selected="true" class="nav-link"
-              data-bs-target="#nav-conan-macos-panel" data-bs-toggle="tab" id="nav-conan-macos-tab" role="tab"
-              type="button">MacOS
-            </button>
-            <button aria-controls="nav-conan-linux" aria-selected="false" class="nav-link"
-              data-bs-target="#nav-conan-linux-panel" data-bs-toggle="tab" id="nav-conan-linux-tab" role="tab"
-              type="button">Linux
-            </button>
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-conan-content">
-          <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
-            role="tabpanel">
-            <pre class="srccode"><code>winget install --id JFrog.Conan --source winget</code></pre>
-          </div>
-
-          <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
-            role="tabpanel">
-            <pre class="srccode"><code>brew install conan</code></pre>
-          </div>
-
-          <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
-            role="tabpanel">
-            <pre class="srccode"><code>sudo apt install conan</code></pre>
-          </div>
-        </div>
-
-        <p>After installing conan we can create a default profile</p>
-        <pre class="srccode"><code>conan profile detect</code></pre>
-
         <p>
-          It's also possible, and recommender, to install conan via a Python
-          virtual environment, for instance using <code>pipenv</code>. This requires
-          to install Python and <code>pipenv</code> but it also allows to have a full
-          self-contained environment.
+          The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
         </p>
-
-        <p>
-          For this tutorial I create some profiles and templates to easily use conan and create new projects from
-          scratch.
-          To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
-        </p>
-
-        <pre class="srccode"><code>conan config install --type git https://github.com/cppyoga/cppyoga-conan-config.git</code></pre>
-
+        <pre class="srccode"><code>winget install --id Microsoft.WindowsTerminal --source winget</code></pre>
       </div>
 
-      <h2 class="text-body-emphasis">IDE</h2>
+      <div aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
+           role="tabpanel">
+        <p>
+          On macOS, I suggest to install iTerm2.
+        </p>
+        <p>
+          I suggest to install also Homebrew as a package manager.
+        </p>
+      </div>
+
+      <div aria-labelledby="nav-terminal-linux-tab" class="tab-pane fade show" id="nav-terminal-linux-panel"
+           role="tabpanel">
+        <p>
+          Nothing to do on Linux :) .
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-body-emphasis">C++ Toolchain</h2>
+    <p>
+      The C++ Toolchain is the collection of tools that translates our source code to an executable that can run in
+      the
+      target machine.
+    </p>
+
+    <p>
+      There are many different compilers available today. MSVC, GCC, MinGW, Clang, and Intel are the most popular.
+      These
+      compilers are very different from each other, and learning singularly all of them takes a lot of time and
+      effort.
+      To our rescue, some build tools abstract the specific compiler and allow us to switch between them easily.
+    </p>
+
+    <p>
+      A particular note about Clang: clang is part of a more extensive framework called LLVM. LLVM provides many tools
+      for formatting the code, static analysis, and compilers.
+    </p>
+
+    <h3>How to install the C++ toolchain</h3>
+    <nav>
+      <div class="nav nav-tabs" id="nav-toolchain-tab" role="tablist">
+        <button aria-controls="nav-toolchain-windows" aria-selected="true" class="nav-link active"
+                data-bs-target="#nav-toolchain-windows-panel" data-bs-toggle="tab" id="nav-toolchain-window-tab"
+                role="tab"
+                type="button">Windows
+        </button>
+        <button aria-controls="nav-toolchain-macos" aria-selected="true" class="nav-link"
+                data-bs-target="#nav-toolchain-macos-panel" data-bs-toggle="tab" id="nav-toolchain-macos-tab" role="tab"
+                type="button">MacOS
+        </button>
+        <button aria-controls="nav-toolchain-linux" aria-selected="false" class="nav-link"
+                data-bs-target="#nav-toolchain-linux-panel" data-bs-toggle="tab" id="nav-toolchain-linux-tab" role="tab"
+                type="button">Linux
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-toolchain-content">
+      <div aria-labelledby="nav-toolchain-window-tab" class="tab-pane fade show active"
+           id="nav-toolchain-windows-panel" role="tabpanel">
+        <p>
+          On Windows, the suggested compiler is bundled with Microsoft Visual Studio. It is possible to
+          download Visual Studio Community for free.
+        </p>
+        <p>
+          There are two options to install it: via winget or downloading it from the browser. Using winget from the
+          Windows Terminal:
+        </p>
+        <pre
+            class="srccode"><code>winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget</code></pre>
+      </div>
+
+      <div aria-labelledby="nav-toolchain-macos-tab" class="tab-pane fade show" id="nav-toolchain-macos-panel"
+           role="tabpanel">
+        <p>
+          Installing the C++ Compiler on macOS is straightforward. Open the terminal and type:
+        </p>
+        <pre class="srccode"><code>xcode-select --install</code></pre>
+      </div>
+      <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
+           role="tabpanel">
+        <p>
+          On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
+          messages than GCC, and it's easier for beginners to understand the issues.
+        </p>
+        <p>
+          Type the following command from the terminal:
+        </p>
+        <pre class="srccode"><code>sudo apt install clang</code></pre>
+      </div>
+    </div>
+
+    <h2 class="text-body-emphasis">Install Git</h2>
+    <p>
+      Git is a software control version. No knowledge of git will be required during this course.
+      The only conan we will use is <code>clone</code>, that will download the project locally
+      from GitHub.
+    </p>
+
+    <p>
+      All the source code will be available from the
+      <a href="https://github.com/cppyoga">cppyoga GutHub</a>, also this website.
+    </p>
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-git-tab" role="tablist">
+        <button aria-controls="nav-git-windows" aria-selected="true" class="nav-link active"
+                data-bs-target="#nav-git-windows-panel" data-bs-toggle="tab" id="nav-git-window-tab" role="tab"
+                type="button">Windows
+        </button>
+        <button aria-controls="nav-git-macos" aria-selected="true" class="nav-link"
+                data-bs-target="#nav-git-macos-panel" data-bs-toggle="tab" id="nav-git-macos-tab" role="tab"
+                type="button">MacOS
+        </button>
+        <button aria-controls="nav-git-linux" aria-selected="false" class="nav-link"
+                data-bs-target="#nav-git-linux-panel" data-bs-toggle="tab" id="nav-git-linux-tab" role="tab"
+                type="button">Linux
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-git-content">
+      <div aria-labelledby="nav-git-window-tab" class="tab-pane fade show active" id="nav-git-windows-panel"
+           role="tabpanel">
+        <pre class="srccode"><code>winget install --id Git.Git --source winget</code></pre>
+      </div>
+
+      <div aria-labelledby="nav-git-macos-tab" class="tab-pane fade show" id="nav-git-macos-panel" role="tabpanel">
+        <pre class="srccode"><code>brew install git</code></pre>
+      </div>
+
+      <div aria-labelledby="nav-git-linux-tab" class="tab-pane fade show" id="nav-git-linux-panel" role="tabpanel">
+        <pre class="srccode"><code>sudo apt install git</code></pre>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-body-emphasis">Conan</h2>
       <p>
-        The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
-        contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
-        Many available IDEs exist. some popular IDEs are:
-      </p>
-        
-      <ul>
-        <li>
-          <a href="https://visualstudio.microsoft.com">Visual Studio</a>: it's working only on Windows and is the most used IDE on this 
-            platform. The comunity edition (CE) is out of charge for students and small companies.
-        </li>
-        <li>
-          <a href="https://www.jetbrains.com/clion/promo/?msclkid=f7483f5942d11c8363b45969985abf34&utm_source=bing&utm_medium=cpc&utm_campaign=EMEA_en_WEST_Clion_Branded&utm_term=clion&utm_content=clion">
-              CLion
-          </a>: it works very well on Windows, Linux and macOS. It's one of the best IDEs for C++
-            and is out of charge for students. This is also my favourite IDE.
-        </li>
-          <a href="https://code.visualstudio.com">Visual Studio Code</a>:
-          it works on Windows, Linux and macOS. I honestly
-          find hard to work with C++, but it's free.
-        </ul>
+        Conan is a C++ package manager. A quick tutorial can be found in <a
+          href="https://docs.conan.io/2/tutorial.html">conan.io</a>
+        website.
       </p>
 
-      <h3>How to install Visual Studio Code</h3>
       <nav>
-        <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
-          <button aria-controls="nav-install-ide-windows" aria-selected="true" class="nav-link active"
-            data-bs-target="#nav-install-ide-windows-panel" data-bs-toggle="tab" id="nav-install-ide-window-tab"
-            role="tab" type="button">Windows
+        <div class="nav nav-tabs" id="nav-conan-tab" role="tablist">
+          <button aria-controls="nav-conan-windows" aria-selected="true" class="nav-link active"
+                  data-bs-target="#nav-conan-windows-panel" data-bs-toggle="tab" id="nav-conan-window-tab" role="tab"
+                  type="button">Windows
           </button>
-          <button aria-controls="nav-install-ide-macos" aria-selected="true" class="nav-link"
-            data-bs-target="#nav-install-ide-macos-panel" data-bs-toggle="tab" id="nav-install-pytidehon-macos-tab"
-            role="tab" type="button">MacOS
+          <button aria-controls="nav-conan-macos" aria-selected="true" class="nav-link"
+                  data-bs-target="#nav-conan-macos-panel" data-bs-toggle="tab" id="nav-conan-macos-tab" role="tab"
+                  type="button">MacOS
           </button>
-          <button aria-controls="nav-install-ide-linux" aria-selected="false" class="nav-link"
-            data-bs-target="#nav-install-ide-linux-panel" data-bs-toggle="tab" id="nav-install-ide-linux-tab" role="tab"
-            type="button">Linux
+          <button aria-controls="nav-conan-linux" aria-selected="false" class="nav-link"
+                  data-bs-target="#nav-conan-linux-panel" data-bs-toggle="tab" id="nav-conan-linux-tab" role="tab"
+                  type="button">Linux
           </button>
         </div>
       </nav>
-      <div class="tab-content" id="nav-install-ide-content">
-        <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
-          id="nav-install-ide-windows-panel" role="tabpanel">
-          <pre class="srccode"><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+      <div class="tab-content" id="nav-conan-content">
+        <div aria-labelledby="nav-conan-window-tab" class="tab-pane fade show active" id="nav-conan-windows-panel"
+             role="tabpanel">
+          <pre class="srccode"><code>winget install --id JFrog.Conan --source winget</code></pre>
         </div>
 
-        <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
-          role="tabpanel">
-          <pre class="srccode"><code>brew install visual-studio-code</code></pre>
+        <div aria-labelledby="nav-conan-macos-tab" class="tab-pane fade show" id="nav-conan-macos-panel"
+             role="tabpanel">
+          <pre class="srccode"><code>brew install conan</code></pre>
         </div>
 
-        <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
-          role="tabpanel">
-          <pre class="srccode"><code>sudo snap install --classic code</code></pre>
+        <div aria-labelledby="nav-conan-linux-tab" class="tab-pane fade show" id="nav-conan-linux-panel"
+             role="tabpanel">
+          <pre class="srccode"><code>sudo apt install conan</code></pre>
         </div>
       </div>
 
-      <h3>Setting up Visual Studio Code</h3>
-      <p>
-        Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press
-        <kbd><kbd>Alt</kbd>
-          + <kbd>Shift</kbd> + <kbd>P</kbd></kbd>
-        or
-        (<kbd><kbd>&#8984;</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd>) and type “Shell Command: install 'code' command in PATH“
-      </p>
-
-      <img alt="Visual Studio setting" class="img-fluid" src="/assets/images/01_ide_code_on_path.webp" />
+      <p>After installing conan we can create a default profile</p>
+      <pre class="srccode"><code>conan profile detect</code></pre>
 
       <p>
-        The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or &#8984;+⇧+P
-        and
-        the extension's name. The following extensions are required:
-      </p>
-
-      <ul>
-        <li>C/C++</li>
-        <li>C/C++ Extension Pack</li>
-        <li>C/C++ Themes (Optional)</li>
-        <li>CMake</li>
-        <li>CMake Tools</li>
-      </ul>
-
-      <p>
-        Below a screenshot with all the required extensions:
-      </p>
-
-      <img alt="Visual Studio Code extension" class="img-fluid" src="/assets/images/01_ide_code_extensions.webp" />
-
-      <p>
-        More information about how to set up a C++ environment can be found here.
-      </p>
-
-      <h2 class="text-body-emphasis">Let's build our first program</h2>
-      <p>
-        Now that we have finally set up the environment we are able to build a complex program. The goal is to be build
-        and run an application and not
-        to understand what is the code doing.
+        It's also possible, and recommender, to install conan via a Python
+        virtual environment, for instance using <code>pipenv</code>. This requires
+        to install Python and <code>pipenv</code> but it also allows to have a full
+        self-contained environment.
       </p>
 
       <p>
-        <strong>
-          If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
-        </strong>
+        For this tutorial I create some profiles and templates to easily use conan and create new projects from
+        scratch.
+        To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
       </p>
 
-      <h3>From the terminal</h3>
+      <pre
+          class="srccode"><code>conan config install --type git https://github.com/cppyoga/cppyoga-conan-config.git</code></pre>
 
-      <ol>
-        <li>
-          <p>
-            Clone the project and jump inside the cloned directory.
-          </p>
-          <pre class="srccode"><code>git clone https://github.com/cppyoga/image2ascii.git
+    </div>
+
+    <h2 class="text-body-emphasis">IDE</h2>
+    <p>
+      The IDE (integrated development editor) is an application combining tools to make coding easier. Usually, an IDE
+      contains an editor where it is possible to write and edit the code and tools to run and debug the applications.
+      Many available IDEs exist. some popular IDEs are:
+    </p>
+
+    <ul>
+      <li>
+        <a href="https://visualstudio.microsoft.com">Visual Studio</a>: it's working only on Windows and is the most
+        used IDE on this
+        platform. The comunity edition (CE) is out of charge for students and small companies.
+      </li>
+      <li>
+        <a href="https://www.jetbrains.com/clion/promo/?msclkid=f7483f5942d11c8363b45969985abf34&utm_source=bing&utm_medium=cpc&utm_campaign=EMEA_en_WEST_Clion_Branded&utm_term=clion&utm_content=clion">
+          CLion
+        </a>: it works very well on Windows, Linux and macOS. It's one of the best IDEs for C++
+        and is out of charge for students. This is also my favourite IDE.
+      </li>
+      <li>
+        <a href="https://code.visualstudio.com">Visual Studio Code</a>:
+        it works on Windows, Linux and macOS. I honestly
+        find hard to work with C++, but it's free.
+      </li>
+    </ul>
+
+    <h3>How to install Visual Studio Code</h3>
+    <nav>
+      <div class="nav nav-tabs" id="nav-install-ide-tab" role="tablist">
+        <button aria-controls="nav-install-ide-windows" aria-selected="true" class="nav-link active"
+                data-bs-target="#nav-install-ide-windows-panel" data-bs-toggle="tab" id="nav-install-ide-window-tab"
+                role="tab" type="button">Windows
+        </button>
+        <button aria-controls="nav-install-ide-macos" aria-selected="true" class="nav-link"
+                data-bs-target="#nav-install-ide-macos-panel" data-bs-toggle="tab" id="nav-install-pytidehon-macos-tab"
+                role="tab" type="button">MacOS
+        </button>
+        <button aria-controls="nav-install-ide-linux" aria-selected="false" class="nav-link"
+                data-bs-target="#nav-install-ide-linux-panel" data-bs-toggle="tab" id="nav-install-ide-linux-tab"
+                role="tab"
+                type="button">Linux
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-install-ide-content">
+      <div aria-labelledby="nav-install-ide-window-tab" class="tab-pane fade show active"
+           id="nav-install-ide-windows-panel" role="tabpanel">
+        <pre class="srccode"><code>winget install --id Microsoft.VisualStudioCode.CLI --source Winget</code></pre>
+      </div>
+
+      <div aria-labelledby="nav-install-ide-macos-tab" class="tab-pane fade show" id="nav-install-ide-macos-panel"
+           role="tabpanel">
+        <pre class="srccode"><code>brew install visual-studio-code</code></pre>
+      </div>
+
+      <div aria-labelledby="nav-install-ide-linux-tab" class="tab-pane fade show" id="nav-install-ide-linux-panel"
+           role="tabpanel">
+        <pre class="srccode"><code>sudo snap install --classic code</code></pre>
+      </div>
+    </div>
+
+    <h3>Setting up Visual Studio Code</h3>
+    <p>
+      Visual Studio Code has to be available from the command line. After launching Visual Studio Code, press
+      <kbd><kbd>Alt</kbd>
+        + <kbd>Shift</kbd> + <kbd>P</kbd></kbd>
+      or
+      (<kbd><kbd>&#8984;</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd>) and type “Shell Command: install 'code' command
+      in PATH“
+    </p>
+
+    <img alt="Visual Studio setting" class="img-fluid" src="/assets/images/01_ide_code_on_path.webp"/>
+
+    <p>
+      The next step is to install all the recommended C++ extensions. To install an extension, type Alt+⇧+X or &#8984;+⇧+P
+      and
+      the extension's name. The following extensions are required:
+    </p>
+
+    <ul>
+      <li>C/C++</li>
+      <li>C/C++ Extension Pack</li>
+      <li>C/C++ Themes (Optional)</li>
+      <li>CMake</li>
+      <li>CMake Tools</li>
+    </ul>
+
+    <p>
+      Below a screenshot with all the required extensions:
+    </p>
+
+    <img alt="Visual Studio Code extension" class="img-fluid" src="/assets/images/01_ide_code_extensions.webp"/>
+
+    <p>
+      More information about how to set up a C++ environment can be found here.
+    </p>
+
+    <h2 class="text-body-emphasis">Let's build our first program</h2>
+    <p>
+      Now that we have finally set up the environment we are able to build a complex program. The goal is to be build
+      and run an application and not
+      to understand what is the code doing.
+    </p>
+
+    <p>
+      <strong>
+        If you're using Visual C++, use the Powershell with the Visual Studio environment enabled.
+      </strong>
+    </p>
+
+    <h3>From the terminal</h3>
+
+    <ol>
+      <li>
+        <p>
+          Clone the project and jump inside the cloned directory.
+        </p>
+        <pre class="srccode"><code>git clone https://github.com/cppyoga/image2ascii.git
 cd cppyoga-image2ascii</code></pre>
-        </li>
-        <li>
-          <p>
-            Buld the program from the command line:
-          </p>
-          <pre class="srccode"><code>conan build . --profile cppyoga/default --build missing</code></pre>
-          <p>
-            At this stage is not important understand the conan commands, this will be explained in the next lectures.
-          </p>
-        </li>
-        <li>
-          <p>
-            Lunch the application:
-          </p>
-          <pre class="srccode"><code>./build/Release/image2ascii</code></pre>
-          <p>
-            After lunching the application, the default image will be download and converted to ASCII art!
-          </p>
-          <img alt="Output of the image2ascii" src="/assets/images/01_image2ascii_output.png" class="img-fluid" >
-        </li>
-      </ol>
-      
-      <h3>From the Visual Studio Code</h3>
+      </li>
+      <li>
+        <p>
+          Buld the program from the command line:
+        </p>
+        <pre class="srccode"><code>conan build . --profile cppyoga/default --build missing</code></pre>
+        <p>
+          At this stage is not important understand the conan commands, this will be explained in the next lectures.
+        </p>
+      </li>
+      <li>
+        <p>
+          Lunch the application:
+        </p>
+        <pre class="srccode"><code>./build/Release/image2ascii</code></pre>
+        <p>
+          After lunching the application, the default image will be downloaded and converted to ASCII art!
+        </p>
+        <img alt="Output of the image2ascii" class="img-fluid" src="/assets/images/01_image2ascii_output.png">
+      </li>
+    </ol>
 
-      <p>
-        After building the project from the terminal we can lunch Visual Studio code from command line
-        and the environment.
-      </p>
+    <h3>From the Visual Studio Code</h3>
 
-      <pre class="srccode"><code>code .</code></pre>
-      <p>
-        At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
-      </p>
-      
-      <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscide_preset.png" />
-      <p>
-        If it doesn't appen just press <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd> and select
-        <code>CMake: Select Build Preset</code>
-      </p>
-      
-      <img alt="Visual Studio Code user preset" class="img-fluid" src="/assets/images/01_vscode_select_user_preset.png" >
-      
-      <p>
-        Build and run from Visual Studio Code using the buttons on the bottom bar.
-      </p>
-      <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscode_bottom_bar.png" />
-      <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscode_run_image2ascii.png" />
+    <p>
+      After building the project from the terminal we can lunch Visual Studio code from command line
+      and the environment.
+    </p>
 
-      <h3>From CLion</h3>
-      <p>
-        After building the project from the terminal we can lunch Visual Studio code from command line
-        and the environment.
-      </p>
+    <pre class="srccode"><code>code .</code></pre>
+    <p>
+      At the boot Visual Studio Code wil detect some <code>CMake presets</code> similary to the picture below
+    </p>
 
-      <p>
-        <strong>
-          CLion doesn't support well Multi-Config project, we cannot should be careful which preset we
-          are choosing.
-        </strong>
-      </p>
+    <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscide_preset.png"/>
+    <p>
+      If it doesn't appen just press <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd></kbd> and select
+      <code>CMake: Select Build Preset</code>
+    </p>
 
-      <p>
-        Make sure CLion is in the path. For the instructions go to
-        <code>Tools / Create Command-Line Luncher...</code>
-      </p>
+    <img alt="Visual Studio Code user preset" class="img-fluid" src="/assets/images/01_vscode_select_user_preset.png">
 
-      <img alt="CLion menu for command-line luncher" class="img-fluid" src="/assets/images/01_clion_create_command_line_luncher.png" />
+    <p>
+      Build and run from Visual Studio Code using the buttons on the bottom bar.
+    </p>
+    <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscode_bottom_bar.png"/>
+    <img alt="Visual Studio Code presets" class="img-fluid" src="/assets/images/01_vscode_run_image2ascii.png"/>
 
-      <p>
-        Follow the instructions on the screen:
-      </p>
+    <h3>From CLion</h3>
+    <p>
+      After building the project from the terminal we can lunch Visual Studio code from command line
+      and the environment.
+    </p>
 
-      <img alt="CLion luncher instructions" class="img-fluid" src="/assets/images/01_clion_istruction_command_line_luncher.png" />
+    <p>
+      <strong>
+        CLion doesn't support well Multi-Config project, we cannot should be careful which preset we
+        are choosing.
+      </strong>
+    </p>
 
-      <p>
-        After starting CLion the following window will appear.
-      </p>
+    <p>
+      Make sure CLion is in the path. For the instructions go to
+      <code>Tools / Create Command-Line Luncher...</code>
+    </p>
 
-      <img alt="CLion cmake preset" class="img-fluid" src="/assets/images/01_clion_start_dialog.png" />
+    <img alt="CLion menu for command-line luncher" class="img-fluid"
+         src="/assets/images/01_clion_create_command_line_luncher.png"/>
 
-      <p>
-        We need to remove the <code>Debug</code> using the <code>-</code> icon and enable
-        <code>conan-default - conan release</code> by selecting the profile and clickin on 
-        the <code>Enable profile</code> checkbox
-      </p>
+    <p>
+      Follow the instructions on the screen:
+    </p>
 
-      <img alt="CLion cmake preset filled" class="img-fluid" src="/assets/images/01_clion_start_dialog_filled.png" />
+    <img alt="CLion luncher instructions" class="img-fluid"
+         src="/assets/images/01_clion_istruction_command_line_luncher.png"/>
 
-      <p>
-        CLion will take a moment to load the project. When the project is fully loaded it's possible to
-        build and run the application throw the buttons on the top-right side of the window.
-      </p>
+    <p>
+      After starting CLion the following window will appear.
+    </p>
 
-      <img alt="CLion build toolbar" class="img-fluid" src="/assets/images/01_clion_project_loaded.png" />
-    
-      <h3>Summary</h3>
-      <p>
-        You have achieved a lot! Setting the C++ environment in a cross-platform manner is very challenging.
-        Also experienced developers will requires hours just to build a similar project! What we've achieved
-        is simply amazing!
-      </p>
-    </main>
+    <img alt="CLion cmake preset" class="img-fluid" src="/assets/images/01_clion_start_dialog.png"/>
 
-    <footer class="pt-5 my-5 text-body-secondary border-top">
-      Elvis Dukaj &copy; 2024
-    </footer>
-  </div>
+    <p>
+      We need to remove the <code>Debug</code> using the <code>-</code> icon and enable
+      <code>conan-default - conan release</code> by selecting the profile and clickin on
+      the <code>Enable profile</code> checkbox
+    </p>
 
-  <script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <img alt="CLion cmake preset filled" class="img-fluid" src="/assets/images/01_clion_start_dialog_filled.png"/>
+
+    <p>
+      CLion will take a moment to load the project. When the project is fully loaded it's possible to
+      build and run the application throw the buttons on the top-right side of the window.
+    </p>
+
+    <img alt="CLion build toolbar" class="img-fluid" src="/assets/images/01_clion_project_loaded.png"/>
+
+    <h3>Summary</h3>
+    <p>
+      You have achieved a lot! Setting the C++ environment in a cross-platform manner is very challenging.
+      Also experienced developers will requires hours just to build a similar project! What we've achieved
+      is simply amazing!
+    </p>
+  </main>
+
+  <footer class="pt-5 my-5 text-body-secondary border-top">
+    Elvis Dukaj &copy; 2024
+  </footer>
+</div>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
