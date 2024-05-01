@@ -620,8 +620,10 @@ code .
 
     <p>
       <strong>
-        CLion doesn't support well Multi-Config project, we cannot should be careful which preset we
-        are choosing.
+        CLion doesn't support well Multi-Config project. While in Visual Studio Code we selected the preset <code>conan
+        default</code>
+        in CLion we have to choose <code>conan default - conan-release</code>. In general, we need to choose the presets
+        that have the pattern <code>conan default - conan-&lt;configuration&gt;</code>.
       </strong>
     </p>
 
