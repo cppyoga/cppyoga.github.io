@@ -127,7 +127,7 @@
     <hr class="col-12 mb-5">
 
     <h2 class="text-body-emphasis">Objectives</h2>
-    <p class="fs-5 col-md-8">
+    <p>
       Using Conan, CMake and Visual Studio Code, you will learn to set up a C++ environment on Windows, macOS and
       Linux.
     <ul>
@@ -139,9 +139,9 @@
 
     <h2 class="text-body-emphasis">What we will learn</h2>
     <p>
-      After this lecture we will be able to build a compile C++ program called image2ascii. Image2Ascii will download a
-      picture from an url, and it will convert it in a coloured ascii art. We will be able to download and compile all
-      the required dependencies, build and run the program and make small changes to it.
+      After this chapter we will be able to build a compile C++ program called image2ascii. Image2Ascii will download a
+      picture from the web given an url, and it will convert it in a coloured ascii art. We will be able to download and
+      compile all the required dependencies, build and run the program and make small changes to it.
     </p>
 
     <p>
@@ -208,7 +208,14 @@
           I highly recommend installing winget on Windows as it will simplify download packages.
         </p>
         <p>
-          The terminal can be downloaded from the Windows App Store or installed via winget on Windows.
+          To install winget, follow the instruction from
+          <a target="_blank" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">
+            learn.microsoft.com</a> homepage. Once winget is installed, all the other software will be installed via
+            winget on Windows.
+        </p>
+        <p>
+          The new windows Terminal will be used for the purpose of this course. If it's not installed yet, it's
+          possible to do it via winget:
         </p>
         <pre><code>
 winget install --id Microsoft.WindowsTerminal --source winget
@@ -219,11 +226,13 @@ winget install --id Microsoft.WindowsTerminal --source winget
           aria-labelledby="nav-terminal-macos-tab" class="tab-pane fade show" id="nav-terminal-macos-panel"
           role="tabpanel">
         <p>
-          On macOS, I suggest to install iTerm2.
+          On macOS, we can use <a target="_blank" href="https://brew.sh/">homebrew</a> for installing
+          packages. The default terminal is lacking many useful features, a good alternative is 
+          <a target="_blank" href="">iTerm2</a>. We can install <code>iTerm2</code> via <code>brew</code>:
         </p>
-        <p>
-          I suggest to install also Homebrew as a package manager.
-        </p>
+        <pre><code>
+brew install --cask iterm2
+        </code></pre>
       </div>
 
       <div
@@ -250,8 +259,8 @@ winget install --id Microsoft.WindowsTerminal --source winget
       <a target="_blank"
          href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html">Intel</a>
       are the most popular. These compilers are very different from each other, and learning singularly all of them
-      takes a lot of time and effort. To our rescue, some build tools abstract the specific compiler and allow us to
-      switch between them easily.
+      takes a lot of time and effort. To our rescue, some <code>CMake</code> will abstract the specific compiler and
+      allow us to switch between them easily.
     </p>
 
     <p>
@@ -290,8 +299,7 @@ winget install --id Microsoft.WindowsTerminal --source winget
           Studio Community for free.
         </p>
         <p>
-          There are two options to install it: via winget or downloading it from the browser. Using winget from the
-          Windows Terminal:
+          To install Visual Studio we can use winget:
         </p>
         <pre><code>
 winget install --id Microsoft.VisualStudio.2022.Community.Preview --source winget
@@ -310,14 +318,59 @@ xcode-select --install
       <div aria-labelledby="nav-toolchain-linux-tab" class="tab-pane fade show" id="nav-toolchain-linux-panel"
            role="tabpanel">
         <p>
-          On Linux, we will use the Clang toolchain instead of GCC. The reason is that Clang has better error
-          messages than GCC, and it's easier for beginners to understand the issues.
-        </p>
-        <p>
-          Type the following command from the terminal:
+          On Ubuntu <code>build-essential</code> will install all the requirements:
         </p>
         <pre><code>
-sudo apt install clang
+sudo apt install build-essential
+        </code></pre>
+      </div>
+    </div>
+
+    <h3>CMake</h3>
+    <p>
+      <a target="_blank" href="https://cmake.org/">CMake</a> is build system for C++, de-facto a standard. CMake is not
+      able to abstract all the different build system like "Visual Studio", Makefiles, XCode, Ninja. This way we don't
+      need to learn every single tool but only one.
+    </p>
+    <nav>
+      <div class="nav nav-tabs" id="nav-cmake-tab" role="tablist">
+        <button
+            aria-controls="nav-cmake-windows" aria-selected="true" class="nav-link active"
+            data-bs-target="#nav-cmake-windows-panel" data-bs-toggle="tab" id="nav-cmake-window-tab"
+            role="tab"
+            type="button">Windows
+        </button>
+        <button
+            aria-controls="nav-cmake-macos" aria-selected="true" class="nav-link"
+            data-bs-target="#nav-cmake-macos-panel" data-bs-toggle="tab" id="nav-cmake-macos-tab" role="tab"
+            type="button">MacOS
+        </button>
+        <button
+            aria-controls="nav-cmake-linux" aria-selected="false" class="nav-link"
+            data-bs-target="#nav-cmake-linux-panel" data-bs-toggle="tab" id="nav-cmake-linux-tab" role="tab"
+            type="button">Linux
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-cmake-content">
+      <div
+          aria-labelledby="nav-cmake-window-tab" class="tab-pane fade show active"
+          id="nav-cmake-windows-panel" role="tabpanel">
+        <pre><code>
+winget install --id Kitware.CMake --source winget
+        </code></pre>
+      </div>
+
+      <div aria-labelledby="nav-cmake-macos-tab" class="tab-pane fade show" id="nav-cmake-macos-panel"
+           role="tabpanel">
+        <pre><code>
+brew install cmake
+        </code></pre>
+      </div>
+      <div aria-labelledby="nav-cmake-linux-tab" class="tab-pane fade show" id="nav-cmake-linux-panel"
+           role="tabpanel">
+        <pre><code>
+sudo apt install cmake
         </code></pre>
       </div>
     </div>
@@ -331,7 +384,8 @@ sudo apt install clang
 
     <p>
       All the source code will be available from the
-      <a href="https://github.com/cppyoga" target="_blank">cppyoga GutHub</a>, also this website.
+      <a href="https://github.com/cppyoga" target="_blank">cppyoga GutHub</a>, also the website
+      itself it's hosted there..
     </p>
 
     <nav>
@@ -429,14 +483,14 @@ conan profile detect
       </code></pre>
 
       <p>
-        It's also possible, and recommender, to install conan via a Python virtual environment, for instance using
+        It's also possible, and recommended, to install conan via a Python using a virtualenvironment, for instance using
         <code>pipenv</code>. This requires to install Python and <code>pipenv</code> but it also allows to have a full
         self-contained environment.
       </p>
 
       <p>
-        For this tutorial I create some profiles and templates to easily use conan and create new projects from scratch.
-        To install the conan configuration open a new terminal and create an empty directory somewhere in your home.
+        For this tutorial I created some profiles and templates to easily use conan and create new projects from scratch.
+        To install the conan configuration we can use the <code>conan config</code> command:
       </p>
 
       <pre><code>
@@ -585,7 +639,10 @@ conan build . --profile cppyoga/default --build missing
     </p>
     <p>
       This command is building the package using the <code>cppyoga/default</code> profile previously installed with
-      <code>conan config install</code>. <code>--build missing</code> is telling conan to build the third party
+      <code>conan config install</code>.
+    </p>
+    <p>
+      <code>--build missing</code> option is telling conan to build the third party
       dependencies if they are not present in the local cache.
     </p>
     <p>
