@@ -23,7 +23,9 @@
 
   <link href="/assets/styles/cppyoga.css" rel="stylesheet"/>
 
-  <link rel="alternate" type="application/rss+xml" title="C++ Yoga" href="https://cppyoga.github.io/cppyoga.rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="C++ Yoga" href="https://cppyoga.github.io/cppyoga.rss.xml"/>
+
+  <link rel="icon" type="image/x-icon" href="/assets/images/logo.svg#logo">
 </head>
 
 <body>
@@ -213,7 +215,7 @@
           To install winget, follow the instruction from
           <a target="_blank" href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">
             learn.microsoft.com</a> homepage. Once winget is installed, all the other software will be installed via
-            winget on Windows.
+          winget on Windows.
         </p>
         <p>
           The new windows Terminal will be used for the purpose of this course. If it's not installed yet, it's
@@ -229,7 +231,7 @@ winget install --id Microsoft.WindowsTerminal --source winget
           role="tabpanel">
         <p>
           On macOS, we can use <a target="_blank" href="https://brew.sh/">homebrew</a> for installing
-          packages. The default terminal is lacking many useful features, a good alternative is 
+          packages. The default terminal is lacking many useful features, a good alternative is
           <a target="_blank" href="">iTerm2</a>. We can install <code>iTerm2</code> via <code>brew</code>:
         </p>
         <pre><code>
@@ -485,13 +487,15 @@ conan profile detect
       </code></pre>
 
       <p>
-        It's also possible, and recommended, to install conan via a Python using a virtualenvironment, for instance using
+        It's also possible, and recommended, to install conan via a Python using a virtualenvironment, for instance
+        using
         <code>pipenv</code>. This requires to install Python and <code>pipenv</code> but it also allows to have a full
         self-contained environment.
       </p>
 
       <p>
-        For this tutorial I created some profiles and templates to easily use conan and create new projects from scratch.
+        For this tutorial I created some profiles and templates to easily use conan and create new projects from
+        scratch.
         To install the conan configuration we can use the <code>conan config</code> command:
       </p>
 
@@ -767,28 +771,28 @@ code .
         <img style="max-width: 200px;" alt="Buy me a coffee" src="/assets/images/bmc-button.svg"/>
       </a>
     </div>
-    
+
   </main>
 
   <footer class="pt-5 my-5 border-top text-body-secondary">
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <a href="/cppyoga.rss.xml" alt="Subscribe with RSS" target="_blank">
+        <a href="/cppyoga.rss.xml" target="_blank">
           <svg class="bi text-body-secondary me-3" height="1.75em" width="1.75em">
             <use xlink:href="/assets/icons/icons.svg#rss-fill"></use>
           </svg>
         </a>
-        <a href="https://www.linkedin.com/in/elvis-dukaj/" alt="Contact me via Linkedin"  target="_blank">
+        <a href="https://www.linkedin.com/in/elvis-dukaj/" target="_blank">
           <svg class="bi text-body-secondary me-3" height="1.75em" width="1.75em">
             <use xlink:href="/assets/icons/icons.svg#linkedin"></use>
           </svg>
         </a>
-        <a href="https://github.com/cppyoga" alt="Look my GitHub" target="_blank">
+        <a href="https://github.com/cppyoga" target="_blank">
           <svg class="bi text-body-secondary me-3" height="1.75em" width="1.75em">
             <use xlink:href="/assets/icons/icons.svg#github"></use>
           </svg>
         </a>
-        <a href="mailto:elvis.dukaj@gmail.com" alt="Contact me via email">
+        <a href="mailto:elvis.dukaj@gmail.com">
           <svg class="bi text-body-secondary me-3" height="1.75em" width="1.75em">
             <use xlink:href="/assets/icons/icons.svg#envelop-at-fill"></use>
           </svg>
