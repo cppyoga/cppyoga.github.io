@@ -29,87 +29,94 @@
 </head>
 
 <body>
-<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-  <button aria-expanded="false" aria-label="Toggle theme (auto)"
-          class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
-          id="bd-theme"
-          type="button">
-    <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
-      <use href="/assets/icons/icons.svg#circle-half"></use>
-    </svg>
-    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-  </button>
-  <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
-    <li>
-      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#sun-fill"></use>
-        </svg>
-        Light
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#check2"></use>
-        </svg>
-      </button>
-    </li>
-    <li>
-      <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
-        </svg>
-        Dark
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#check2"></use>
-        </svg>
-      </button>
-    </li>
-    <li>
-      <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-              type="button">
-        <svg class="bi me-2 opacity-50" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#circle-half"></use>
-        </svg>
-        Auto
-        <svg class="bi ms-auto d-none" height="1em" width="1em">
-          <use href="/assets/icons/icons.svg#check2"></use>
-        </svg>
-      </button>
-    </li>
-  </ul>
-</div>
 
 <div class="col-lg-8 mx-auto p-4 py-md-5">
-  <nav class="navbar navbar-expand-sm" aria-label="Third navbar example">
+  <nav aria-label="Third navbar example" class="navbar navbar-expand-sm">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/index.html">
+      <a class="navbar-brand d-flex align-items-center text-body-emphasis text-decoration-none" href="/">
         <svg class="bi me-2" height="32" width="40">
-          <use xlink:href="/assets/images/logo.svg#logo"/>
+          <use xlink:href="/assets/images/logo.svg#logo">
         </svg>
         <span class="fs-4">C++ Yoga</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
-              aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="dropdown mx-auto bd-mode-toggle">
+        <button aria-expanded="false" aria-label="Toggle theme (auto)"
+                class="btn py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
+                id="bd-theme"
+                type="button">
+          <svg class="bi my-1 theme-icon-active" height="1em" width="1em">
+            <use href="/assets/icons/icons.svg#circle-half"></use>
+          </svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul aria-labelledby="bd-theme-text" class="dropdown-menu dropdown-menu-end shadow">
+          <li>
+            <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    type="button">
+              <svg class="bi me-2 opacity-50" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#sun-fill"></use>
+              </svg>
+              Light
+              <svg class="bi ms-auto d-none" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#check2"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button aria-pressed="false" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    type="button">
+              <svg class="bi me-2 opacity-50" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#moon-stars-fill"></use>
+              </svg>
+              Dark
+              <svg class="bi ms-auto d-none" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#check2"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button aria-pressed="true" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    type="button">
+              <svg class="bi me-2 opacity-50" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#circle-half"></use>
+              </svg>
+              Auto
+              <svg class="bi ms-auto d-none" height="1em" width="1em">
+                <use href="/assets/icons/icons.svg#check2"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <button
+        aria-controls="MainNavigationBar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler"
+        data-bs-target="#MainNavigationBar"
+        data-bs-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample03">
+      <div class="collapse navbar-collapse" id="MainNavigationBar">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+            <a aria-current="page" class="nav-link active" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page">About me</a>
+            <a class="nav-link" href="/html/contacts.html">About me</a>
           </li>
-          <!--
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
           </li>
-          -->
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/html/table-of-content.html" data-bs-toggle="dropdown"
-               aria-expanded="false">Table of content</a>
+            <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+               href="/html/table-of-content.html">Table of content</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/html/ch01.html">Chapter 01</a></li>
             </ul>
